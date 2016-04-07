@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Tokenly Music API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;php&quot;,&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="php">php</a>
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a target="_blank" href='http://tokenly.com'>Tokenly</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        
+          <h1 id="tokenly-music-api">Tokenly Music API</h1>
+
+<p>Welcome to the Tokenly Music API.</p>
+
+<p>You can use the public API to register and login users and retrieve album and song listings.</p>
+
+<p>The protected API retrieves song download information if authorized for the user.</p>
+
+<p>All API calls begin with https://music-stage.tokenly.com.</p>
+
+<p>The PHP examples in use the PHP SDK which can be found at <a href="https://github.com/tokenly/music-api-client">https://github.com/tokenly/music-api-client</a>.</p>
+
+          <h1 id="authentication">Authentication</h1>
+
+<p>Protected API calls require authentication. See <a href="https://github.com/tokenly/hmac-auth/blob/master/README.md">https://github.com/tokenly/hmac-auth/blob/master/README.md</a> for details.</p>
+
+          <h1 id="public-api-methods">Public API Methods</h1>
+
+          <h2 id="get-all-albums">Get All Albums</h2>
+<pre class="highlight php"><code>$albums = $music_api-&gt;getAlbums();
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET https://music-stage.tokenly.com/api/v1/music/catalog/albums
+</code></pre>
+
+<blockquote>
+<p>The above command returns data structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cc6f8915-a7b3-4da1-aa5f-7e505291a181"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Little Color EP"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Released on January 10th, 2016 - A Little Color EP is Adam B. Levine's first release of original music under the name "</span><span class="err">Mind</span><span class="w"> </span><span class="err">To</span><span class="w"> </span><span class="err">Matter</span><span class="s2">" and on the website mindtomatter.org. "</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"songCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p>Lists all available publicly available albums.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://music-stage.tokenly.com/api/v1/music/catalog/albums</code></p>
+
+          <h2 id="get-songs-for-an-album">Get Songs for an Album</h2>
+<pre class="highlight php"><code>$songs = $music_api-&gt;getSongs('cc6f8915-a7b3-4da1-aa5f-7e505291a181');
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET https://music-stage.tokenly.com/api/v1/music/catalog/songs/cc6f8915-a7b3-4da1-aa5f-7e505291a181
+</code></pre>
+
+<blockquote>
+<p>The above command returns data structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c795531a-23e7-4dd5-aa29-4b670d45158c"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ears on the Ground"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tokens"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"LITTLECOLOR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"MTMYEARONE"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"MTMCOLLECTOR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"MTMPRODUCER"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"performers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mind To Matter"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"composers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adam B. Levine"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"releaseDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-26T20:31:12+0000"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lyrics"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"credits"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adam B. Levine 2016"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ownership"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adam B. Levine"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"usageRights"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"usageProhbitions"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"bitcoinAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1GJchZwagFFxXMUnRyQFVDe8QSKb9mJKXS"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"other"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p>Returns a list of songs for a given album.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://music-stage.tokenly.com/api/v1/music/catalog/songs/{albumid}</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>albumid</td>
+<td>The album identifier</td>
+</tr>
+</tbody></table>
+
+          <h1 id="public-account-api-methods">Public Account API Methods</h1>
+
+          <h2 id="register">Register</h2>
+<pre class="highlight php"><code>$username = 'leroyjenkins';
+$password = 'ASecretP4$$w0RD';
+$email = 'leroyjenkins@test.com';
+$user_data = $music_api-&gt;registerAccount($username, $password, $email);
+</code></pre>
+<pre class="highlight shell"><code><span class="nv">NEW_USERNAME</span><span class="o">=</span><span class="s1">'leroyjenkins'</span>
+<span class="nv">NEW_PASSWORD</span><span class="o">=</span><span class="s1">'ASecretP4$$w0RD'</span>
+<span class="nv">NEW_EMAIL</span><span class="o">=</span><span class="s1">'leroyjenkins@test.com'</span>
+
+curl -H <span class="s2">"Content-Type: application/json"</span> -X POST <span class="se">\</span>
+  -d <span class="s1">'{"username":"'</span><span class="nv">$NEW_USERNAME</span><span class="s1">'","password":"'</span><span class="nv">$NEW_PASSWORD</span><span class="s1">'","email":"'</span><span class="nv">$NEW_EMAIL</span><span class="s1">'"}'</span> <span class="se">\</span>
+  https://music-stage.tokenly.com/api/v1/account/register 
+
+</code></pre>
+
+<blockquote>
+<p>The above command returns data structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7a000000-8000-a000-b000-cc0000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"leroyjenkins"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"leroyjenkins@test.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"apiSecretKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"apiToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Txxxxxxxxxxxxxxx"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Registers a new username and password.</p>
+
+<p>This username must not exist in Tokenly Music or TokenPass.  If the user already exists in TokenPass, use the <a href="#login">login</a> method instead.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://music-stage.tokenly.com/api/v1/account/register</code></p>
+
+<h3 id="post-parameters">POST Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The new username</td>
+</tr>
+<tr>
+<td>password</td>
+<td>The new password</td>
+</tr>
+<tr>
+<td>email</td>
+<td>The new email address</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">The POST data should be a json encoded string</aside>
+
+          <h2 id="login">Login</h2>
+<pre class="highlight php"><code>$username = 'leroyjenkins';
+$password = 'ASecretP4$$w0RD';
+$user_data = $music_api-&gt;login($username, $password);
+</code></pre>
+<pre class="highlight shell"><code><span class="nv">EXISTING_USERNAME</span><span class="o">=</span><span class="s1">'leroyjenkins'</span>
+<span class="nv">EXISTING_PASSWORD</span><span class="o">=</span><span class="s1">'ASecretP4$$w0RD'</span>
+
+curl -H <span class="s2">"Content-Type: application/json"</span> -X POST <span class="se">\</span>
+  -d <span class="s1">'{"username":"'</span><span class="nv">$EXISTING_USERNAME</span><span class="s1">'","password":"'</span><span class="nv">$EXISTING_PASSWORD</span><span class="s1">'"}'</span> <span class="se">\</span>
+  https://music-stage.tokenly.com/api/v1/account/login 
+
+</code></pre>
+
+<blockquote>
+<p>The above command returns data structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7a000000-8000-a000-b000-cc0000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"leroyjenkins"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"leroyjenkins@test.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"apiSecretKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"apiToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Txxxxxxxxxxxxxxx"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Get a user&rsquo;s API credentials with a username and password.</p>
+
+<p>This muser must exist in Tokenly Music or TokenPass.  If the user with these credentials exists in TokenPass but not in Tokenly Music, then Tokenly Music will create a new account based on the TokenPass account.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://music-stage.tokenly.com/api/v1/account/login</code></p>
+
+<h3 id="post-parameters">POST Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>The existing username</td>
+</tr>
+<tr>
+<td>password</td>
+<td>The existing password</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">The POST data should be a json encoded string</aside>
+
+          <h1 id="authenticated-api-methods">Authenticated API Methods</h1>
+
+          <h2 id="get-my-songs">Get My Songs</h2>
+<pre class="highlight php"><code>$albums = $music_api-&gt;getMySongs();
+</code></pre>
+<pre class="highlight shell"><code><span class="nv">API_TOKEN</span><span class="o">=</span><span class="s2">"Txxxxxxxxxxxxxxx"</span> <span class="o">&amp;&amp;</span> <span class="nv">API_SECRET_KEY</span><span class="o">=</span><span class="s2">"Kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span>
+<span class="nv">NONCE</span><span class="o">=</span><span class="sb">`</span>date +%s<span class="sb">`</span>
+<span class="nv">SIGNATURE</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -en <span class="s2">"GET</span><span class="se">\n</span><span class="s2">https://music-stage.tokenly.com/api/v1/music/mysongs</span><span class="se">\n</span><span class="s2">{}</span><span class="se">\n</span><span class="k">${</span><span class="nv">API_TOKEN</span><span class="k">}</span><span class="se">\n</span><span class="k">${</span><span class="nv">NONCE</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
+    | openssl dgst -sha256 -hmac <span class="s2">"</span><span class="k">${</span><span class="nv">API_SECRET_KEY</span><span class="k">}</span><span class="s2">"</span> -binary | base64<span class="k">)</span>
+curl -X GET <span class="se">\</span>
+    -H <span class="s2">"X-TOKENLY-AUTH-API-TOKEN: </span><span class="k">${</span><span class="nv">API_TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
+    -H <span class="s2">"X-TOKENLY-AUTH-NONCE: </span><span class="k">${</span><span class="nv">NONCE</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
+    -H <span class="s2">"X-TOKENLY-AUTH-SIGNATURE: </span><span class="k">${</span><span class="nv">SIGNATURE</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
+    https://music-stage.tokenly.com/api/v1/music/mysongs
+</code></pre>
+
+<blockquote>
+<p>The above command returns data structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d2e5fbb2-ee81-49bc-a791-0464ff01f6a1"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Banana Stands' Lament"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"tokens"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"LITTLECOLOR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"MTMYEARONE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"MTMCOLLECTOR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"MTMPRODUCER"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"performers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mind To Matter"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"composers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adam B. Levine"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"releaseDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-26T20:31:19+0000"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lyrics"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"credits"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adam B. Levine 2016"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"ownership"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adam B. Levine"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"usageRights"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"usageProhbitions"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"bitcoinAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1GJchZwagFFxXMUnRyQFVDe8QSKb9mJKXS"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"other"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"downloadUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.amazonaws.com/tokenly-music/u-xxxxx/a-xxxxx/s-xxxxx/xxxxx.mp3"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"downloadSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">3519927</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p>Lists all songs available to the user owning the API token.  The data returned includes a download URL for each song.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://music-stage.tokenly.com/api/v1/music/mysongs</code></p>
+
+          <h2 id="get-song-download-information">Get Song Download Information</h2>
+<pre class="highlight php"><code>$song_info = $music_api-&gt;getDownloadInfoForSong();
+</code></pre>
+<pre class="highlight shell"><code><span class="nv">API_TOKEN</span><span class="o">=</span><span class="s2">"Txxxxxxxxxxxxxxx"</span> <span class="o">&amp;&amp;</span> <span class="nv">API_SECRET_KEY</span><span class="o">=</span><span class="s2">"Kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span>
+<span class="nv">SONG_ID</span><span class="o">=</span><span class="s2">"d2e5fbb2-ee81-49bc-a791-0464ff01f6a1"</span>
+<span class="nv">NONCE</span><span class="o">=</span><span class="sb">`</span>date +%s<span class="sb">`</span>
+<span class="nv">SIGNATURE</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -en <span class="s2">"GET</span><span class="se">\n</span><span class="s2">https://music-stage.tokenly.com/api/v1/music/song/download/</span><span class="k">${</span><span class="nv">SONG_ID</span><span class="k">}</span><span class="se">\n</span><span class="s2">{}</span><span class="se">\n</span><span class="k">${</span><span class="nv">API_TOKEN</span><span class="k">}</span><span class="se">\n</span><span class="k">${</span><span class="nv">NONCE</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
+    | openssl dgst -sha256 -hmac <span class="s2">"</span><span class="k">${</span><span class="nv">API_SECRET_KEY</span><span class="k">}</span><span class="s2">"</span> -binary | base64<span class="k">)</span>
+curl -X GET <span class="se">\</span>
+    -H <span class="s2">"X-TOKENLY-AUTH-API-TOKEN: </span><span class="k">${</span><span class="nv">API_TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
+    -H <span class="s2">"X-TOKENLY-AUTH-NONCE: </span><span class="k">${</span><span class="nv">NONCE</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
+    -H <span class="s2">"X-TOKENLY-AUTH-SIGNATURE: </span><span class="k">${</span><span class="nv">SIGNATURE</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
+    https://music-stage.tokenly.com/api/v1/music/song/download/<span class="nv">$SONG_ID</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns data structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d2e5fbb2-ee81-49bc-a791-0464ff01f6a1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Banana Stands' Lament"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tokens"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"LITTLECOLOR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MTMYEARONE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MTMCOLLECTOR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MTMPRODUCER"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"performers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mind To Matter"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"composers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adam B. Levine"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"releaseDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-26T20:31:19+0000"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lyrics"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"credits"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"copyright"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adam B. Levine 2016"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ownership"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adam B. Levine"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"usageRights"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"usageProhbitions"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"bitcoinAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1GJchZwagFFxXMUnRyQFVDe8QSKb9mJKXS"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"other"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"downloadUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.amazonaws.com/tokenly-music/u-xxxxx/a-xxxxx/s-xxxxx/xxxxx.mp3"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"downloadSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">3519927</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Retrieves song data for the user owning the API token.  The data returned includes a download URL.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://music-stage.tokenly.com/api/v1/music/song/download/{songid}</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>songid</td>
+<td>The song identifier</td>
+</tr>
+</tbody></table>
+
+          <h1 id="errors">Errors</h1>
+
+<p>The Tokenly Music API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>403</td>
+<td>Forbidden</td>
+<td>The credentials are wrong or missing</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td>The resource is not found</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed</td>
+<td>You tried to access a kitten with an invalid method</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone</td>
+<td>The requested resource is no longer present</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests</td>
+<td>Too Many Requests</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td>We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable</td>
+<td>We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="php">php</a>
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
