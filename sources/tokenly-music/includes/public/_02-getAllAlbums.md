@@ -2,6 +2,7 @@
 
 
 ```php
+<?php
 $albums = $music_api->getAlbums();
 ```
 

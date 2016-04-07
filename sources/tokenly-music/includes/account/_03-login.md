@@ -1,6 +1,7 @@
 ## Login
 
 ```php
+<?php
 $username = 'leroyjenkins';
 $password = 'ASecretP4$$w0RD';
 $user_data = $music_api->login($username, $password);

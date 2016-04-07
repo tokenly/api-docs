@@ -1,6 +1,7 @@
 ## Register
 
 ```php
+<?php
 $username = 'leroyjenkins';
 $password = 'ASecretP4$$w0RD';
 $email = 'leroyjenkins@test.com';

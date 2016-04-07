@@ -2,11 +2,13 @@
 
 
 ```php
+<?php
 $song_info = $music_api->getDownloadInfoForSong();
 ```
 
 ```shell
-API_TOKEN="Txxxxxxxxxxxxxxx" && API_SECRET_KEY="Kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+API_TOKEN="Txxxxxxxxxxxxxxx"
+API_SECRET_KEY="Kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 SONG_ID="d2e5fbb2-ee81-49bc-a791-0464ff01f6a1"
 NONCE=`date +%s`
 SIGNATURE=$(echo -en "GET\nhttps://music-stage.tokenly.com/api/v1/music/song/download/${SONG_ID}\n{}\n${API_TOKEN}\n${NONCE}" \

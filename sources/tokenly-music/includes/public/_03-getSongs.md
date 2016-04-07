@@ -1,6 +1,7 @@
 ## Get Songs for an Album
 
 ```php
+<?php
 $songs = $music_api->getSongs('cc6f8915-a7b3-4da1-aa5f-7e505291a181');
 ```
 

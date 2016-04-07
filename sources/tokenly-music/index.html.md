@@ -17,9 +17,9 @@ includes:
   - account/01-intro
   - account/02-register
   - account/03-login
-  - authenticated/01-intro
-  - authenticated/02-getMySongs
-  - authenticated/03-getSongDownloadInfo
+  - protected/01-intro
+  - protected/02-getMySongs
+  - protected/03-getSongDownloadInfo
   - errors
 
 search: true
