@@ -10,6 +10,10 @@ NEW_VERSION=$1
 # remove source
 SOURCE_DIR="sources/${NEW_VERSION}"
 NEW_BUILD_DIR="builds/${NEW_VERSION}"
+
+# make sure builds directory exists
+mkdir -p builds
+
 if [ -e $SOURCE_DIR ]; then
     if [ -e ./source ]; then
         rm -rf ./source
