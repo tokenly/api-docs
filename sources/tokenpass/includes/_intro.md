@@ -3,4 +3,4 @@
 
 Welcome to the Tokenpass API.
 
-### The rest is being written right now.
+### This is still a work in progress.
