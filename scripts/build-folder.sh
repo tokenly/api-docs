@@ -22,6 +22,9 @@ fi;
 echo "building $FOLDER_NAME"
 bundle exec middleman build --clean
 
+# ensure builds folder exists
+mkdir -p ./builds
+
 # move the build
 if [ -e $NEW_BUILD_DIR ]; then
     rm -rf $NEW_BUILD_DIR
