@@ -38,6 +38,18 @@ under the License.
   </head>
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
+
+    <header>
+      <div class="nav">
+        <ul>
+          <li><a href="/">Docs Home</a></li>
+          <li><a class="active" href="/tokenly-music">Tokenly Music</a></li>
+          <li><a href="/swapbot">Swapbot</a></li>
+          <li><a href="/tokenpass">TokenPass</a></li>
+        </ul>
+      </div>
+    </header>
+
     <a href="#" id="nav-button">
       <span>
         NAV

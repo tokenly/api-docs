@@ -2,6 +2,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'icon-font';
+@import 'nav';
 
 /*
 Copyright 2008-2013 Concur Technologies, Inc.
@@ -62,7 +63,7 @@ html, body {
   overflow-x: hidden;
   position: fixed;
   z-index: 30;
-  top: 0;
+  top: 36px;
   left: 0;
   bottom: 0;
   width: $nav-width;
@@ -258,6 +259,8 @@ html, body {
 ////////////////////////////////////////////////////////////////////////////////
 
 .page-wrapper {
+  top: 36px;
+
   margin-left: $nav-width;
   position: relative;
   z-index: 10;
@@ -281,6 +284,7 @@ html, body {
   }
 
   .lang-selector {
+    top: 36px;
     position: fixed;
     z-index: 50;
     border-bottom: 5px solid $lang-select-active-bg;

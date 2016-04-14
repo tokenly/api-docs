@@ -1,7 +1,7 @@
 # Errors
 
 
-The Swapbot API uses the following error codes:
+The Tokenpass API uses the following error codes:
 
 
 Error Code | Name | Meaning
