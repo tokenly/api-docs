@@ -1,4 +1,4 @@
-## Submits an unsigned send transaction to the bitcoin network
+## Submits a signed send transaction to the bitcoin network
 
 ```php
 <?php
