@@ -58,4 +58,3 @@ Parameter       | Description
 addressId       | The UUID of the address to send from.  This is not the bitcoin address.
 
 
-<aside class="notice">The POST data should be a json encoded string</aside>

@@ -39,4 +39,3 @@ Parameter       | Description
 ---------       | -----------
 addressId       | The UUID of the address (not the bitcoin address itself)
 
-<aside class="notice">The POST data should be a json encoded string</aside>
