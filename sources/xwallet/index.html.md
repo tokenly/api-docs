@@ -23,6 +23,9 @@ includes:
   - balances/01-intro
   - balances/02-getBalances
 
+  - assets/01-intro
+  - assets/02-getTokenMeta
+
   - errors
 
 search: true
