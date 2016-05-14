@@ -36,7 +36,9 @@ curl -X GET \
             "BTC": 0.12,
             "TOKENLY": 10
         },
-        "sending": []
+        "sending": {
+            "TOKENLY": 2
+        }
     }
 }
 ```

@@ -8,7 +8,7 @@ $sent_data = $api->submitSend($send_uuid, $signed_transaction_hex);
 ```
 
 ```shell
-SEND_UUID="1YxC7GN6NipW12XLPuCFcTFfkMKYAu1Lb"
+SEND_UUID="8ccccccc-1234-5678-1234-cccccccc1111"
 SIGNED_TX_HEX="0000113111deadbeef0000aaabcdef1111110000113111deadbeef"
 
 API_TOKEN="Txxxxxxxxxxxxxxx"
