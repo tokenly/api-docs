@@ -55,7 +55,7 @@ curl -X POST \
 
 Creates a new, unsigned transaction.  XWallet will not allow any further transaction creation for this address until you either submit or destroy this transaction.
 
-UTXOs are provided to sign the inputs to the transaction.
+UTXOs are provided in order to sign the inputs for this transaction.  UTXO amounts are in satoshis.
 
 ### HTTP Request
 

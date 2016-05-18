@@ -1,4 +1,4 @@
-## Create a new address
+## Add a new address
 
 ```php
 <?php
@@ -25,13 +25,6 @@ curl -X POST \
     https://xwallet.tokenly.com/api/v1/addresses
 ```
 
-curl -X POST \
-    -H "Content-Type: application/json" \
-    -H "X-TOKENLY-AUTH-API-TOKEN: ${API_TOKEN}" \
-    -H "X-TOKENLY-AUTH-NONCE: ${NONCE}" \
-    -H "X-TOKENLY-AUTH-SIGNATURE: ${SIGNATURE}" \
-
-
 > The above command returns data structured like the following.  Note that there may be more data returned than listed below.
 
 ```json
@@ -44,7 +37,7 @@ curl -X POST \
 ```
 
 
-Adds a bitcoin address to be managed by this client.
+Add a bitcoin address to be managed by this user.
 
 ### HTTP Request
 

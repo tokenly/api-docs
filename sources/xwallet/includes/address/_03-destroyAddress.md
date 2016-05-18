@@ -27,7 +27,7 @@ curl -X DELETE \
 
 
 
-Remove a bitcoin address managed by this client.
+Removes a bitcoin address that is managed by this client.
 
 ### HTTP Request
 

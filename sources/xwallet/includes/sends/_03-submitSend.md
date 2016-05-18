@@ -36,7 +36,7 @@ curl -X POST \
 ```
 
 
-Broadcasts the send to the bitcoin network.
+Broadcasts the send to the bitcoin network and unlocks the pending send.
 
 ### HTTP Request
 
