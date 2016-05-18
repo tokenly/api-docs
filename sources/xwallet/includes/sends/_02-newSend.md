@@ -38,13 +38,23 @@ curl -X POST \
     "quantity": 3,
     "asset": "TOKENLY",
     "txid": "a123456789123456789123456789123456789123456789123456789aaabbbccc",
-    "unsignedTx": "0000113111deadbeef0000aaabcdef1111110000113111deadbeef0000aaabcdef1111110000113111deadbeef0000aaabcdef1111110000113111deadbeef0000aaabcdef111111"
+    "unsignedTx": "0000113111deadbeef0000aaabcdef1111110000113111deadbeef0000aaabcdef1111110000113111deadbeef0000aaabcdef1111110000113111deadbeef0000aaabcdef111111",
+    "utxos": [
+        {
+            "amount": 1000000,
+            "n": 0,
+            "script": "feeb0000aaabcdef11111100feeb0000aaabcdef11111100aa",
+            "txid": "a123bbbbbbbbcccccccc3456789123456789123456789123456789aaabbbccc"
+        }
+    ]
 }
 ```
 
 
 
-Creates a new, unsigned transaction.  XWallet will treat UTXOs in this transaction as spent until you either submit or destroy this transaction.
+Creates a new, unsigned transaction.  XWallet will not allow any further transaction creation for this address until you either submit or destroy this transaction.
+
+UTXOs are provided to sign the inputs to the transaction.
 
 ### HTTP Request
 
