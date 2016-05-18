@@ -11,6 +11,8 @@ toc_footers:
 includes:
   - intro
 
+  - authentication
+
   - address/01-intro
   - address/02-newAddress
   - address/03-destroyAddress

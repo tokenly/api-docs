@@ -1,0 +1,11 @@
+The XWallet API is ready for you to test against on our staging server at https://xwallet-stage.tokenly.com.
+
+
+
+
+Here are your development XWallet credentials for https://xwallet-stage.tokenly.com.
+
+{
+    "apitoken": "TGqlHIFOR43pPGy5",
+    "apisecretkey": "K6KP1a0Bd9pJii2N0ITl84BYPJyaQDhc2N8DDZqZ"
+}

@@ -11,6 +11,7 @@ toc_footers:
 
 includes:
   - intro
+  - authentication
   - bot/01-intro
   - bot/02-botById
   - bot/03-getBots
