@@ -2,6 +2,7 @@
 
 ```php
 <?php
+$api = new XWalletAPI(); # note - The PHP API client doesn't exist just yet
 $asset_name = 'TOKENLY';
 $asset_info = $api->getTokenMeta($asset_name);
 ```

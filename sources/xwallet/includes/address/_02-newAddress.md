@@ -2,6 +2,7 @@
 
 ```php
 <?php
+$api = new XWalletAPI(); # note - The PHP API client doesn't exist just yet
 $address = '1YxC7GN6NipW12XLPuCFcTFfkMKYAu1Lb';
 $bot_data = $api->newAddress($address);
 ```

@@ -2,6 +2,7 @@
 
 ```php
 <?php
+$api = new XWalletAPI(); # note - The PHP API client doesn't exist just yet
 $address_uuid = '8ccccccc-1234-5678-1234-cccccccc1111';
 $bot_data = $api->getBalances($address_uuid);
 ```

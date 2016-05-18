@@ -2,6 +2,7 @@
 
 ```php
 <?php
+$api = new XWalletAPI(); # note - The PHP API client doesn't exist just yet
 $send_uuid = '8ccccccc-1234-5678-1234-cccccccc1111';
 $signed_transaction_hex = '0000113111deadbeef0000aaabcdef1111110000113111deadbeef';
 $sent_data = $api->submitSend($send_uuid, $signed_transaction_hex);
