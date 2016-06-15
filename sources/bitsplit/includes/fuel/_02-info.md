@@ -1,7 +1,7 @@
 ## Get Fuel Info
 
 ```php
-
+<?php
 $info = $client->getFuelInfo();
 $fuel_address = $info['fuel_address'];
 $fuel_balance = $info['fuel_balanceFloat'];
