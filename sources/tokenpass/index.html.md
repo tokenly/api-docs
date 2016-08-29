@@ -10,6 +10,8 @@ toc_footers:
 includes:
   - intro
   - oauth
+  - tca
+  - promises
 
 search: true
 ---
