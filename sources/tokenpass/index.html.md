@@ -12,6 +12,7 @@ includes:
   - oauth
   - tca
   - promises
+  - addresses
 
 search: true
 ---
