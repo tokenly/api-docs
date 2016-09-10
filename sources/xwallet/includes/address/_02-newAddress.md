@@ -18,6 +18,7 @@ SIGNATURE=$(echo -en "POST\nhttps://xwallet.tokenly.com/api/v1/addresses\n{"addr
     | openssl dgst -sha256 -hmac "${API_SECRET_KEY}" -binary | base64)
 
 curl -X POST \
+    -H "Content-Type: application/json" \
     -H "X-TOKENLY-AUTH-API-TOKEN: ${API_TOKEN}" \
     -H "X-TOKENLY-AUTH-NONCE: ${NONCE}" \
     -H "X-TOKENLY-AUTH-SIGNATURE: ${SIGNATURE}" \
