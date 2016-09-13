@@ -13,6 +13,9 @@ includes:
   - bvam/02-getAssetInformation
   - bvam/03-listActiveBvam
   - bvam/04-addBvam
+  - category/01-intro
+  - category/02-addCategory
+  - category/03-listActiveCategories
   - public/01-intro
   - public/02-publicBvamResource
   - errors
