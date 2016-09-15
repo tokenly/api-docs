@@ -11,8 +11,9 @@ includes:
   - intro
   - bvam/01-intro
   - bvam/02-getAssetInformation
-  - bvam/03-listActiveBvam
-  - bvam/04-addBvam
+  - bvam/03-getMultipleAssetInformation
+  - bvam/04-listActiveBvam
+  - bvam/05-addBvam
   - category/01-intro
   - category/02-addCategory
   - category/03-listActiveCategories
