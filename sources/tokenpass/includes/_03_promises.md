@@ -16,7 +16,8 @@ and can be used for more advanced use cases such as access lending and rental sy
 $api = new TokenpassAPI();
 $address = '1CPM4nnf9sjD7aU46gQki8moNdxwwkfjbf';
 $message = $address.'_'.hash('sha256', TOKENPASS_CLIENT);
-$proof = $this->xchain->signMessage($address, $message);
+$xchain_client = new Tokenly\XChainClient\Client(env('XCHAIN_URL'), env('XCHAIN_API_TOKEN'), env('XCHAIN_API_KEY'));
+$proof = $xchain_client->signMessage($address, $message);
 $register = $api->registerProvisionalSource($address, $proof, null);
 if($register){
     //success
@@ -33,7 +34,7 @@ Registers a bitcoin address to the provisional source whitelist, allowing it to 
 
 * **Endpoint:** **/api/v1/tca/provisional/register**
 * **Request Method:** POST
-* **Authentication:** ```client_id```
+* **Authentication:** hmac signature with `client_id` and `client_secret`
 * **Scopes required:** none
 * **Returns:** ```result``` (boolean)
 
@@ -68,17 +69,17 @@ Removes an address which you have previously registered from the provisional sou
 
 * **Endpoint:** **/api/v1/tca/provisional/register/{address}**
 * **Request Method:** DELETE
-* **Authentication:** ```client_id```
-* **Returns:** ```result``` (boolean)
+* **Authentication:** hmac signature with `client_id` and `client_secret`
+* **Returns:** `result` (boolean)
 
 
 ##List Source Addresses
 
 ```php
 <?php
-$get = $api->getProvisionalSourceList();
-if($get){
-    foreach($get as $source_address){
+$source_addresses = $api->getProvisionalSourceList();
+if($source_addresses){
+    foreach($source_addresses as $source_address){
         $address = $source_address['address'];
         $restricted_assets = $source_address['assets'];
         //do something
@@ -90,7 +91,7 @@ Lists all source addresses you have registered using your API key.
 
 * **Endpoint:** **/api/v1/tca/provisional**
 * **Request Method:** GET
-* **Authentication:** ```client_id```
+* **Authentication:** hmac signature with `client_id` and `client_secret`
 * **Returns:** 
    * ```result (boolean)```
    * ```proof_suffix (string)```
@@ -126,7 +127,7 @@ If a real txid/fingerprint is set, tokenpass will automatically remove this prov
 
 * **Endpoint:** **/api/v1/tca/provisional/tx**
 * **Request Method:** POST
-* **Authentication:** ```client_id```
+* **Authentication:** hmac signature with `client_id` and `client_secret`
 * **Returns:** 
    * ```result (boolean)```
    * ```tx (Provisional TX Object)```
@@ -163,7 +164,7 @@ Gives you a list of all token promises you have made with your API key.
 
 * **Endpoint:** **/api/v1/tca/provisional/tx**
 * **Request Method:** GET
-* **Authentication:** ```client_id```
+* **Authentication:** hmac signature with `client_id` and `client_secret`
 * **Returns:** 
    * ```result (boolean)```
    * ```list (array of Provisional TX Objects)```
@@ -184,7 +185,7 @@ Get details on a specific provisional transaction you have made.
 
 * **Endpoint:** **/api/v1/tca/provisional/tx/{promise_id|txid|fingerprint}**
 * **Request Method:** GET
-* **Authentication:** ```client_id```
+* **Authentication:** hmac signature with `client_id` and `client_secret`
 * **Returns:** 
    * ```result (boolean)```
    * ```tx (Provisional TX Object)```
@@ -205,7 +206,7 @@ Removes a promise you have made from the system.
 
 * **Endpoint:** **/api/v1/tca/provisional/tx/{promise_id|txid|fingerprint}**
 * **Request Method:** DELETE
-* **Authentication:** ```client_id```
+* **Authentication:** hmac signature with `client_id` and `client_secret`
 * **Returns:** 
    * ```result (boolean)```
    
@@ -231,7 +232,7 @@ Update details for a promise you have made, such as bumping the expiration time 
 
 * **Endpoint:** **/api/v1/tca/provisional/tx/{promise_id|txid|fingerprint}**
 * **Request Method:** PATCH
-* **Authentication:** ```client_id```
+* **Authentication:** hmac signature with `client_id` and `client_secret`
 * **Returns:** 
    * ```result (boolean)```
    * ```tx (Provisional TX Object)```  

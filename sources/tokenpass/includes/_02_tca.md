@@ -29,14 +29,14 @@ The following logic operators are available:
 
 The following stack grouping operators are available:
 
-| stackOp  | Description                                                          |
+| stackOp   | Description                                                          |
 |-----------|----------------------------------------------------------------------|
 | AND       | (default)                                                            |
 | OR        | Rules previous to this are grouped together, e.g (AND AND) OR (this) |
 
 An example TCA query looks like this:
 
-``` /api/v1/tca/check/cryptonaut?LTBCOIN=10000&LTBSTAFF=1&op_0=>stack_Op_1=OR ```
+``` /api/v1/tca/check/cryptonaut?LTBCOIN=10000&LTBSTAFF=1&op_0=>stackop_1=OR ```
 
 The source code for the component which processes the TCA rule stack can be found [here](https://github.com/tokenly/token-controlled-access/blob/master/src/Tokenly/TCA/Access.php). 
 
@@ -46,7 +46,7 @@ The source code for the component which processes the TCA rule stack can be foun
 <?php
 $api = new TokenpassAPI();
 $user = 'cryptonaut';
-$rules = array('TOKENLY' => 1, 'LTBCOIN' => 100000, 'stackOp_0' => 'OR');
+$rules = array('TOKENLY' => 1, 'LTBCOIN' => 100000, 'stackop_1' => 'OR');
 $check = $api->checkTokenAccess($user, $rules);
 if($check){
     //grant access
@@ -61,16 +61,15 @@ Check if a user holds the appropriate tokens for TCA.
 
 * **Endpoint:** **/api/v1/tca/check/{username}**
 * **Request Method:** GET
-* **Authentication:** ```client_id```
-* **Scopes required:** ``tca```
-* **Returns:** ```result``` (boolean)
+* **Authentication:** hmac signature with `client_id` and `client_secret`
+* **Returns:** `result` (boolean)
 
 ##Check Token Access (Address)
 
 ```php
 <?php
 $address = '1CPM4nnf9sjD7aU46gQki8moNdxwwkfjbf';
-$rules = array('TOKENLY' => 1, 'LTBCOIN' => 100000, 'stackOp_0' => 'OR');
+$rules = array('TOKENLY' => 1, 'LTBCOIN' => 100000, 'stackop_1' => 'OR');
 $check = $api->checkAddressTokenAccess($address, $rules);
 if($check){
     //grant access
@@ -85,6 +84,5 @@ Check if a specific bitcoin address holds a certain combination of tokens for TC
 
 * **Endpoint:** **/api/v1/tca/check-address/{address}**
 * **Request Method:** GET
-* **Authentication:** ```client_id```
-* **Scopes required:** none
-* **Returns:** ```result``` (boolean)
+* **Authentication:** none
+* **Returns:** `result` (boolean)

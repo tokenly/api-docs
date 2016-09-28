@@ -1,18 +1,17 @@
 #Address Management
 
-The Tokenpass API allows advanced applications using the ```manage-address``` and ```private-address``` OAuth permission scopes to
+The Tokenpass API allows advanced applications using the `manage-address` and `private-address` OAuth permission scopes to
 modify or look at a user's list of registered & verified bitcoin addresses. Addresses are also sometimes referred to as "Pockets", and
 token balances as the "inventory".
 
 
-##Get Address List
+##Get Personal Address List
 
 ```php
 <?php
 $api = new TokenpassAPI();
 $user = 'cryptonaut';
-$address_list = $api->getAddresses($user);
-//$address_list = $api->getPublicAddresses($user); //method to get public addresses only
+$address_list = $api->getAddressesForAuthenticatedUser($oauth_token);
 if($address_list){
     foreach($address_list as $address){
         //do something
@@ -21,19 +20,18 @@ if($address_list){
 
 ```
 
-* **Endpoint:** **/api/v1/tca/addresses/{username}**
+* **Endpoint:** **/api/v1/tca/addresses**
 * **Request Method:** GET
-* **Authentication:** ```client_id```, optional ```oauth_token```
-* **Scopes:** ```tca```
-* **Optional Scopes:** ```private-address```, ```manage-address```
+* **Authentication:** `oauth_token`
+* **Scopes:** `tca`
+* **Optional Scopes:** `private-address`
 * **Returns:** 
-   * ```result (array of User Address Objects)```
+   * `result (array of User Address Objects)`
    
-If no ```oauth_token``` or ```private-address``` scope used, only addresses marked "public" are returned.
+If the `private-address` scope is not enabled, only public and verified addresses are returned.
 
-If the requested user has connected to your application with the ```private-address``` scope applied, you  may see all verified addresses on their account.
+If the requested user has connected to your application with the `private-address` scope applied, you will be returned all public, private, verified and non-verified addresses on their account.
 
-If both ```manage-address``` scope applied and ```oauth_token``` provided, all addresses both verified and non-verified are shown.
 
 
 ##Register Address
@@ -62,12 +60,12 @@ it can be used for token access purposes.
 
 For security reasons, addresses registered via API cannot be used for logging in or for two-factor authentication.
 
-* **Endpoint:** **/api/v1/tca/addresses**
+* **Endpoint:** **/api/v1/tca/address**
 * **Request Method:** POST
-* **Authentication:** ```client_id```, ```oauth_token```
-* **Scopes:**  ```manage-address```
+* **Authentication:** `oauth_token`
+* **Scopes:**  `manage-address`
 * **Returns:** 
-   * ```result (User Address Object)```
+   * `result (User Address Object)`
    
 **Request Parameters:**
 
@@ -77,15 +75,14 @@ Parameter   | Type        | Description
 **label**   |  string     | Optional display label
 **public**  |  boolean    | If this address is publicly viewable or not, default false
 **active**  |  boolean    | Make this address active for TCA, or not, default true
-**type**    |  string     | Network type (only ```btc``` supported, default)
+**type**    |  string     | Network type (only `btc` supported, default)
 
-##Get Address Details
+##Get Personal Address Details
 
 ```php
 <?php
 $address = '14eRVGNPQChSmSmNLH6RPjdwsNPc7rH2Z7';
-$user = 'cryptonaut';
-$details = $api->getAddressDetails($user, $address);
+$details = $api->getAddressDetailsForAuthenticatedUser($address, $oauth_token);
 if($details){
     //address found, do something
 }
@@ -96,25 +93,25 @@ if($details){
 
 Get information about a specific registered bitcoin address, including a list of token balances.
 
-* **Endpoint:** **/api/v1/tca/addresses/{username}/{address}**
+* **Endpoint:** **/api/v1/tca/address/{address}**
 * **Request Method:** GET
-* **Authentication:** ```client_id```, optional ```oauth_token```
-* **Scopes:**  ```tca```
-* **Optional Scopes:** ```private-address```, ```manage-address```
+* **Authentication:** `oauth_token`
+* **Scopes:**  `tca`
+* **Optional Scopes:** `private-address`
 * **Returns:** 
-   * ```result (User Address Object)```
+   * `result (User Address Object)`
 
 ##Verify Address
 
 ```php
 <?php
 $address = '14eRVGNPQChSmSmNLH6RPjdwsNPc7rH2Z7';
-$user = 'cryptonaut';
-$details = $api->getAddressDetails($user, $address);
+$details = $api->getAddressDetailsForAuthenticatedUser($address, $oauth_token);
 if($details){
     $message = $details['verify_code'];
-    $sign = $this->xchain->signMessage($address, $message);
-    $verify = $api->verifyAddress($user, $address, $oauth_token, $sign);
+    $xchain_client = new Tokenly\XChainClient\Client(env('XCHAIN_URL'), env('XCHAIN_API_TOKEN'), env('XCHAIN_API_KEY'));
+    $signature = $xchain_client->signMessage($address, $message);
+    $verify = $api->verifyAddress($address, $oauth_token, $signature);
     if($verify){
         //verification success
     }
@@ -127,18 +124,18 @@ if($details){
 
 Provide Tokenpass a proof-of-ownership signature to verify a registered bitcoin address.
 
-* **Endpoint:** **/api/v1/tca/addresses/{username}/{address}**
+* **Endpoint:** **/api/v1/tca/address/{address}**
 * **Request Method:** POST
-* **Authentication:** ```client_id```, ```oauth_token```
-* **Scopes:**  ```manage-address```
+* **Authentication:** `oauth_token`
+* **Scopes:**  `manage-address`
 * **Returns:** 
-   * ```result (boolean)```
+   * `result (boolean)`
    
 **Request Parameters:**
 
 Parameter     | Type        | Description
 --------------| ------------| ------------
-**signature** |  string     | Signed message of the ```verify_code``` field from the ```User Address Object```
+**signature** |  string     | Signed message of the `verify_code` field from the `User Address Object`
 
 
 ##Update Address
@@ -149,7 +146,7 @@ Parameter     | Type        | Description
 $address = '14eRVGNPQChSmSmNLH6RPjdwsNPc7rH2Z7';
 $user = 'cryptonaut';
 $active = false;
-$update = $api->updateAddressDetails($user, $address, $oauth_token, null, null, $active);
+$update = $api->updateAddressDetails($address, $oauth_token, null, null, $active);
 if($update){
     //update success
 }
@@ -162,12 +159,12 @@ else{
 
 Update the basic details on a registered address.
 
-* **Endpoint:** **/api/v1/tca/addresses/{username}/{address}**
+* **Endpoint:** **/api/v1/tca/address/{address}**
 * **Request Method:** PATCH
-* **Authentication:** ```client_id```, ```oauth_token```
-* **Scopes:**  ```manage-address```
+* **Authentication:** `oauth_token`
+* **Scopes:**  `manage-address`
 * **Returns:** 
-   * ```result (User Address Object)```
+   * `result (User Address Object)`
    
 **Request Parameters:**
 
@@ -183,9 +180,8 @@ Parameter    | Type        | Description
 <?php
 //toggle address inactive
 $address = '14eRVGNPQChSmSmNLH6RPjdwsNPc7rH2Z7';
-$user = 'cryptonaut';
 $active = false;
-$delete = $api->deleteAddres($user, $address, $oauth_token);
+$delete = $api->deleteAddres($address, $oauth_token);
 if($delete){
     //delete success
 }
@@ -198,12 +194,12 @@ else{
 
 Remove a registered bitcoin address from the system.
 
-* **Endpoint:** **/api/v1/tca/addresses/{username}/{address}**
+* **Endpoint:** **/api/v1/tca/address/{address}**
 * **Request Method:** DELETE
-* **Authentication:** ```client_id```, ```oauth_token```
-* **Scopes:**  ```manage-address```
+* **Authentication:** `oauth_token`
+* **Scopes:**  `manage-address`
 * **Returns:** 
-   * ```result (boolean)```
+   * `result (boolean)`
 
 ##Instant Register & Verify
 
@@ -213,7 +209,7 @@ and with minimal authentication required.
 The Pockets management section in the Tokenpass user dashboard generates a unique verification code tied to their current browser session.
 This code can be read either via browser extension or by scanning the provided QR code, and then used to complete a valid instant verification request.
 
-For browser extensions, look for the HTML element with ID ```#instant-address-qr``` and then look at the ```data-verify-message``` property.
+For browser extensions, look for the HTML element with ID `#instant-address-qr` and then look at the `data-verify-message` property.
 
 
 * **Endpoint:** **/api/v1/instant-verify/{username}**
@@ -221,7 +217,7 @@ For browser extensions, look for the HTML element with ID ```#instant-address-qr
 * **Authentication:** none
 * **Scopes:**  none
 * **Returns:** 
-   * ```result (boolean)```
+   * `result (boolean)`
    
    
 **Request Parameters:**
@@ -230,7 +226,7 @@ Parameter   | Type      | Description
 ------------| ----------| ------------
 **msg**     |  string   | Verification message obtained from QR code
 **address** |  string   | Bitcoin address to register
-**sig**     |  string   | Signed message of the ```msg``` field from the bitcoin address.
+**sig**     |  string   | Signed message of the `msg` field from the bitcoin address.
 
 
 ##Lookup User By Address
@@ -248,10 +244,59 @@ Search to see if a bitcoin address belongs to any users in Tokenpass (address mu
 
 * **Endpoint:** **/api/v1/lookup/address/{address}**
 * **Request Method:** GET
-* **Authentication:** ```client_id```
+* **Authentication:** hmac signature with `client_id` and `client_secret`
 * **Scopes:**  none
 * **Returns:** 
-   * ```result (User Lookup Object)```
+   * `result (User Lookup Object)`
+
+
+##Get Public Address List
+
+```php
+<?php
+$api = new TokenpassAPI();
+$user = 'cryptonaut';
+$address_list = $api->getPublicAddresses($user);
+if($address_list){
+    foreach($address_list as $address){
+        //do something
+    }
+}
+
+```
+
+* **Endpoint:** **/api/v1/tca/addresses/{username}**
+* **Request Method:** GET
+* **Authentication:** hmac signature with `client_id` and `client_secret`
+* **Scopes:** none
+* **Returns:** 
+   * `result (array of User Address Objects)`
+   
+Only addresses that are active, verified and marked public are returned.
+
+
+##Get Public Address Details
+
+```php
+<?php
+$address = '14eRVGNPQChSmSmNLH6RPjdwsNPc7rH2Z7';
+$username = 'cryptonaut';
+$details = $api->getPublicAddressDetails($username, $address);
+if($details){
+    //address found, do something
+}
+
+
+
+```
+
+Get information about a specific registered bitcoin address, including a list of token balances.  Only active
+
+* **Endpoint:** **/api/v1/tca/address/{username}/{address}**
+* **Request Method:** GET
+* **Authentication:** hmac signature with `client_id` and `client_secret`
+* **Returns:** 
+   * `result (User Address Object)`
 
 
 ##Lookup Address By User
@@ -271,10 +316,10 @@ Get the first (public) registered bitcoin address owned by this user.
 
 * **Endpoint:** **/api/v1/lookup/user/{username}**
 * **Request Method:** GET
-* **Authentication:** ```client_id```
+* **Authentication:** hmac signature with `client_id` and `client_secret`
 * **Scopes:**  none
 * **Returns:** 
-   * ```result (User Lookup Object)```
+   * `result (User Lookup Object)`
 
 ##User Address Object
 
@@ -308,9 +353,9 @@ Variable          | Type        | Description
 **verified** *    |  boolean    | If this address is verified or not
 **verify_code** * |  string     | Verification code to sign
 
-\* only shown if ```oauth_token``` provided with ```manage-address``` scope.
+\* only shown if `oauth_token` provided with `manage-address` scope.
 
-```verify_code``` is only included if address unverified.
+`verify_code` is only included if address unverified.
 
 ##User Lookup Object
 
