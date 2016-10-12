@@ -13,7 +13,8 @@ includes:
   - 02_tca
   - 03_promises
   - 04_addresses
-  - 05_authentication
+  - 05_balances
+  - 06_authentication
 
 search: true
 ---

@@ -290,7 +290,7 @@ if($details){
 
 ```
 
-Get information about a specific registered bitcoin address, including a list of token balances.  Only active
+Get information about a specific registered bitcoin address, including a list of token balances.  Only active and public addresses are available.
 
 * **Endpoint:** **/api/v1/tca/address/{username}/{address}**
 * **Request Method:** GET
