@@ -73,11 +73,11 @@ header .nav {
  
 @media screen and (min-width: 600px) {
   .nav li {
-    min-width: 120px;
+    min-width: 100px;
     border-bottom: none;
     height: 36px;
     line-height: 36px;
-    font-size: 1.2em;
+    font-size: 1.0em;
   }
  
   /* Option 1 - Display Inline */

@@ -17,7 +17,7 @@ ASSET="TOKENLY"
 API_TOKEN="Txxxxxxxxxxxxxxx"
 API_SECRET_KEY="Kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 NONCE=`date +%s`
-SIGNATURE=$(echo -en "POST\nhttps://xwallet.tokenly.com/api/v1/sends/${ADDRESS_UUID}\n{"destination":"$DESTINATION","quantity":"$QUANTITY","asset":"$ASSET"}\n${API_TOKEN}\n${NONCE}" \
+SIGNATURE=$(echo -en "POST\nhttps://xwallet.tokenly.com/api/v1/sends/${ADDRESS_UUID}\n{\"destination\":\"$DESTINATION\",\"quantity\":\"$QUANTITY\",\"asset\":\"$ASSET\"}\n${API_TOKEN}\n${NONCE}" \
     | openssl dgst -sha256 -hmac "${API_SECRET_KEY}" -binary | base64)
 
 curl -X POST \
