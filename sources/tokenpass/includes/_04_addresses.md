@@ -24,7 +24,7 @@ if($address_list){
 * **Request Method:** GET
 * **Authentication:** `oauth_token`
 * **Scopes:** `tca`
-* **Optional Scopes:** `private-address`
+* **Optional Scopes:** `private-address`, `manage-address`
 * **Returns:** 
    * `result (array of User Address Objects)`
    
@@ -97,7 +97,7 @@ Get information about a specific registered bitcoin address, including a list of
 * **Request Method:** GET
 * **Authentication:** `oauth_token`
 * **Scopes:**  `tca`
-* **Optional Scopes:** `private-address`
+* **Optional Scopes:** `private-address`, `manage-address`
 * **Returns:** 
    * `result (User Address Object)`
 

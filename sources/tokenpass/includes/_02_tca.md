@@ -47,7 +47,7 @@ The source code for the component which processes the TCA rule stack can be foun
 $api = new TokenpassAPI();
 $user = 'cryptonaut';
 $rules = array('TOKENLY' => 1, 'LTBCOIN' => 100000, 'stackop_1' => 'OR');
-$check = $api->checkTokenAccess($user, $rules);
+$check = $api->checkTokenAccess($user, $rules, $oauth_token);
 if($check){
     //grant access
 }
@@ -61,7 +61,7 @@ Check if a user holds the appropriate tokens for TCA.
 
 * **Endpoint:** **/api/v1/tca/check/{username}**
 * **Request Method:** GET
-* **Authentication:** hmac signature with `client_id` and `client_secret`
+* **Authentication:** hmac signature with `client_id` and `client_secret`, as well as valid `oauth_token`
 * **Returns:** `result` (boolean)
 
 ##Check Token Access (Address)
