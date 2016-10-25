@@ -13,7 +13,7 @@ curl -X DELETE \
     -H "Content-Type: application/json" \
     -H "X-TOKENLY-AUTH-API-TOKEN: ${API_TOKEN}" -H "X-TOKENLY-AUTH-NONCE: ${NONCE}" -H "X-TOKENLY-AUTH-SIGNATURE: ${SIGNATURE}" \
     -d '{"sweep_address": "1AAAA1111xxxxxxxxxxxxxxxxxxy43CZ9j"}' \
-    https://deliver.tokenly.com/api/v1/source/${SOURCE_ADDRESS_UUID}
+    https://deliver.tokenly.com/api/v1/source/$SOURCE_ADDRESS_UUID
 ```
 
 

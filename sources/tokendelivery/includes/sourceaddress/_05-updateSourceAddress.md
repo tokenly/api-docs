@@ -13,7 +13,7 @@ curl -X PATCH \
     -H "Content-Type: application/json" \
     -H "X-TOKENLY-AUTH-API-TOKEN: ${API_TOKEN}" -H "X-TOKENLY-AUTH-NONCE: ${NONCE}" -H "X-TOKENLY-AUTH-SIGNATURE: ${SIGNATURE}" \
     -d '{"label": "Game River", "join_callback": "http://my-app.com/updated-joined-hook"}' \
-    https://deliver.tokenly.com/api/v1/source/${SOURCE_ADDRESS_UUID}
+    https://deliver.tokenly.com/api/v1/source/$SOURCE_ADDRESS_UUID
 ```
 
 
