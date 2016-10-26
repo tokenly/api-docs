@@ -45,6 +45,8 @@ Creates a new token delivery.  Also registers a new Tokenpass promise and provis
 
 ### Body Parameters
 
+Parameter     | Description
+------------  | -----------
 source        | (string) uuid OR bitcoin address of source to retrieve and send token inventory from
 destination   | (string) bitcoin address
 token         | (string) token or pseudo token to delivery

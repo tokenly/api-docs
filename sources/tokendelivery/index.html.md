@@ -26,6 +26,10 @@ includes:
   - delivery/05-updateDelivery
   - delivery/06-deleteDelivery
 
+  - fulfillment/01-intro
+  - fulfillment/02-fulfillSingleDelivery
+  - fulfillment/03-fulfillMultipleDeliveries
+
   - errors
 
 search: true

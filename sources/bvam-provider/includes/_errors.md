@@ -13,4 +13,4 @@ Error Code | Name                  | Meaning
 422        | Unprocessable Entity  | The data was valid, but violated one or more validation rules
 429        | Too Many Requests     | Too Many Requests
 500        | Internal Server Error | We had a problem with our server. Try again later.
-503        | Service Unavailable   | We're temporarially offline for maintanance. Please try again later.
+503        | Service Unavailable   | We're temporarially offline for maintenance. Please try again later.
