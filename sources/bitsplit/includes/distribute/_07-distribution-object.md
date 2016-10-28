@@ -5,7 +5,7 @@ This is the response object containing individual distribution details.
 ```
 {
   "result": {
-    "id": 7,
+    "id": '522124c8-0d4d-400e-aaaf-78a7f2c6527e',
     "label": "my test distribution",
     "created_at": "2016-06-09 08:21:26",
     "updated_at": "2016-06-09 08:21:26",
@@ -64,7 +64,7 @@ This is the response object containing individual distribution details.
 
 Variable                | Type     | Description
 ---------------------   | ---------  | ------------
-**id**                  |  integer   | Distribution ID
+**id**                  |  string   | Distribution Unique ID
 **label**               |  string    | Reference label
 **created_at**          |  timestamp | Date initiated
 **updated_at**          |  timestamp | Last updated
