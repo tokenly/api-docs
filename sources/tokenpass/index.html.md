@@ -3,17 +3,18 @@ title: Tokenpass API Reference
 
 language_tabs:
   - php
-  - shell
 
 toc_footers:
-  - <a target="_blank" href='http://tokenly.com'>Tokenly</a>
+  - <a target="_blank" href='https://tokenly.com'>Tokenly</a>
 
 includes:
-  - intro
-  - tca/01-intro
-  - tca/02-checkTCAForUser
-
-  - errors
+  - 00_intro
+  - 01_oauth
+  - 02_tca
+  - 03_promises
+  - 04_addresses
+  - 05_balances
+  - 06_authentication
 
 search: true
 ---
