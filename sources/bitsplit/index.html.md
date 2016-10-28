@@ -21,6 +21,7 @@ includes:
   - distribute/08-distribution-list-object
   - distribute/09-distribution-tx-object
   - distribute/10-stages
+  - distribute/11-webhook
   - fuel
   - fuel/01-intro
   - fuel/02-info
