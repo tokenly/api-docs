@@ -1,3 +1,5 @@
 # Source Address Methods
 
-A source address in this context is a multi-sig (P2SH) bitcoin address which holds the full amount of token inventory needed to fulfill any present or future deliveries” One multi-sig key is held by our XChain service, one is held by the client application, and an optional third is held by an independent company. 
+A 'source address' is a multi-sig bitcoin address which holds the 'inventory' for your deliveries.
+
+You may only send token deliveries from a source address up to it's current real token balance, ensuring a 100% reserve for outgoing payments.

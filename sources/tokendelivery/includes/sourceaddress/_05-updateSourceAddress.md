@@ -52,10 +52,13 @@ addressId       | The UUID of the source address.  This is not the bitcoin addre
 
 ### Body Parameters
 
-Parameter     | Description
-------------  | -----------
-label         | (string, Optional)  label for reference purposes
-join_callback | (string, Optional)  callback URL if using the join_code method. Notifies the desired endpoint of the generated address when the wallet is joined
-webhook       | (string, Optional)  webhook URL to notify of sends and receives related to this address.  This overrides the API user level `default_webhook`
-auto_fulfill  | (boolean, Optional) Causes deliveries from this source address to be marked ready and fulfilled automatically when delivery_date is triggered. Default is true.
-active        | (boolean, Optional) Change the active status of this address
+Parameter           | Description
+------------------- | -----------
+label               | (string, Optional)  label for reference purposes
+join_callback       | (string, Optional)  callback URL if using the join_code method. Notifies the desired endpoint of the generated address when the wallet is joined
+webhook             | (string, Optional)  webhook URL to notify of sends and receives related to this address.  This overrides the API user level `default_webhook`
+auto_fulfill        | (boolean, Optional) Causes deliveries from this source address to be marked ready and fulfilled automatically when delivery_date is triggered. Default is true.
+active              | (boolean, Optional) Change the active status of this address
+desired_utxo_primes | (integer, Optional) Choose how many spare UTXOs you want to keep to facilitate smooth transactions
+
+

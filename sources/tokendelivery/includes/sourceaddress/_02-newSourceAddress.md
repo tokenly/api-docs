@@ -35,7 +35,11 @@ curl -X POST \
 }
 ```
 
-Creates a new source address.  Use the `join_code` to join this address in a Tokenly Pockets wallet.
+When a new source address is requested, a `join_code` is provided which you (the client) can enter in to your
+Tokenly Pockets wallet to join as a shared wallet cosigner. If using ```type='2:2'```, all deliveries must be manually
+approved via the wallet. If using 2 of 3 types or greater, full automation can be achived via automated cosigner agents
+which validate, accept and sign transaction proposals.
+
 
 
 ### HTTP Request
@@ -45,10 +49,13 @@ Creates a new source address.  Use the `join_code` to join this address in a Tok
 
 ### Body Parameters
 
-Parameter    | Description
------------- | -----------
-type         | (string, Optional)  Either `2:2` or `2:3`. Default is 2:2
-label        | (string, Optional)  label for reference purposes
-callback_url | (string, Optional)  callback URL if using the join_code method. Notifies the desired endpoint of the generated address when the wallet is joined
-webhook      | (string, Optional)  webhook URL to notify of sends and receives related to this address.  This overrides the API user level `default_webhook`
-auto_fulfill | (boolean, Optional) Causes deliveries from this source address to be marked ready and fulfilled automatically when delivery_date is triggered. Default is true.
+Parameter           | Description
+------------------- | -----------
+type                | (string, Optional)  Either `2:2` or `2:3`. Default is 2:3
+label               | (string, Optional)  label for reference purposes
+join_callback       | (string, Optional)  callback URL if using the join_code method. Notifies the desired endpoint of the generated address when the wallet is joined
+webhook             | (string, Optional)  webhook URL to notify of sends and receives related to this address.  This overrides the API user level `default_webhook`
+auto_fulfil         | (boolean, Optional) Causes deliveries from this source address to be marked ready and fulfilled automatically when delivery_date is triggered. Default is true.
+active              | (boolean, Optional) Start this source address off as active or inactive (stops processing deliveries)
+desired_utxo_primes | (integer, Optional) Choose how many spare UTXOs you want to keep to facilitate smooth transactions
+
