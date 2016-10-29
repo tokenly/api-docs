@@ -29,9 +29,9 @@ curl -X GET \
     "active": true,
     "createdAt": "2016-10-21T15:38:36+0000",
     "updatedAt": "2016-10-21T15:38:36+0000",
-    "desired_utxo_primes": 12,
+    "desiredUtxoPrimes": 12,
     "balances": [],
-    "pendingDelivery": []
+    "pendingDeliveries": []
 }
 ```
 

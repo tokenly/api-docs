@@ -30,7 +30,7 @@ curl -X GET \
             "active": true,
             "createdAt": "2016-10-21T15:38:36+0000",
             "updatedAt": "2016-10-21T15:38:36+0000",
-            "desired_utxo_primes": 12
+            "desiredUtxoPrimes": 12
         },
         {
             "id": "10a0fd56-3b14-4de0-9f11-dbdd8fd8721c",
@@ -44,7 +44,7 @@ curl -X GET \
             "active": true,
             "createdAt": "2016-10-21T15:38:36+0000",
             "updatedAt": "2016-10-21T15:38:36+0000",
-            "desired_utxo_primes": 12
+            "desiredUtxoPrimes": 12
         }
     ]
 }
