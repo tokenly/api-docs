@@ -20,6 +20,20 @@ if($address_list){
 
 ```
 
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var data = {oauth_token:'otsU0YpM5bWN4Cj4lTcpC1ZBtRLMGSnhqAiqzt12',scope:'tca'}
+tokenapiModule.getAddressesForAuthenticatedUser(data).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
+```
+
 * **Endpoint:** **/api/v1/tca/addresses**
 * **Request Method:** GET
 * **Authentication:** `oauth_token`
@@ -52,6 +66,21 @@ else{
 
 
 ```
+
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var postData = {address:'14eRVGNPQChSmSmNLH6RPjdwsNPc7rH2Z7', label:"My test address", public: true, active:true, oauth_token: 'G9nIzjvKzamo3JyymepA44xjz7cSOBExILsCzv12', scope:'manage-address' }
+tokenapiModule.registerAddress(postData).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
+```
+
 
 Registers a bitcoin address to the system. 
 
@@ -87,8 +116,22 @@ if($details){
     //address found, do something
 }
 
+```
 
 
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var address = '14eRVGNPQChSmSmNLH6RPjdwsNPc7rH2Z7'	
+var data = {oauth_token:'otsU0YpM5bWN4Cj4lTcpC1ZBtRLMGSnhqAiqzt12',scope:'tca'}
+tokenapiModule.getAddressDetailsForAuthenticatedUser(address,data).then(function(result){
+	console.log(result.result.verify_code);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
 ```
 
 Get information about a specific registered bitcoin address, including a list of token balances.
@@ -153,9 +196,24 @@ if($update){
 else{
     //failed
 }
-
-
 ```
+
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var address = '14eRVGNPQChSmSmNLH6RPjdwsNPc7rH2Z7'	
+var data = {label:'Test update address',public: true, active:true,oauth_token:'otsU0YpM5bWN4Cj4lTcpC1ZBtRLMGSnhqAiqzt12',scope:'manage-address'}
+tokenapiModule.updateAddressDetails(address,data).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
+```
+
+
 
 Update the basic details on a registered address.
 
@@ -189,7 +247,21 @@ else{
     //failed
 }
 
+```
 
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var address = '14eRVGNPQChSmSmNLH6RPjdwsNPc7rH2Z7'	
+var data = {oauth_token:'otsU0YpM5bWN4Cj4lTcpC1ZBtRLMGSnhqAiqzt12',scope:'manage-address'}
+tokenapiModule.deleteAddress(address,data).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
 ```
 
 Remove a registered bitcoin address from the system.
@@ -240,6 +312,20 @@ if($lookup){
 }
 ```
 
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var address = '14eRVGNPQChSmSmNLH6RPjdwsNPc7rH2Z7'
+tokenapiModule.lookupUserByAddress(address).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
+```
+
 Search to see if a bitcoin address belongs to any users in Tokenpass (address must be set to public).
 
 * **Endpoint:** **/api/v1/lookup/address/{address}**
@@ -265,6 +351,20 @@ if($address_list){
 
 ```
 
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var username = 'ratinder'
+tokenapiModule.getPublicAddresses(username).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
+```
+
 * **Endpoint:** **/api/v1/tca/addresses/{username}**
 * **Request Method:** GET
 * **Authentication:** hmac signature with `client_id` and `client_secret`
@@ -286,13 +386,26 @@ if($details){
     //address found, do something
 }
 
+```
 
-
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var username = 'ratinder'
+var address = '14eRVGNPQChSmSmNLH6RPjdwsNPc7rH2Z7'
+tokenapiModule.getPublicAddressDetails(username,address).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
 ```
 
 Get information about a specific registered bitcoin address, including a list of token balances.  Only active and public addresses are available.
 
-* **Endpoint:** **/api/v1/tca/address/{username}/{address}**
+* **Endpoint:** **/api/v1/tca/addresses/{username}/{address}**
 * **Request Method:** GET
 * **Authentication:** hmac signature with `client_id` and `client_secret`
 * **Returns:** 
@@ -309,7 +422,20 @@ if($lookup){
     //send them some tokens to their public address
 }
 
+```
 
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var username = 'ratinder'
+tokenapiModule.lookupAddressByUser(username).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
 ```
 
 Get the first (public) registered bitcoin address owned by this user.

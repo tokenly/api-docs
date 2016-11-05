@@ -57,6 +57,22 @@ else{
 
 ```
 
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var username = 'ratinder'
+var data = {oauth_token:'otsU0YpM5bWN4Cj4lTcpC1ZBtRLMGSnhqAiqzt12', TOKENLY: 1, LTBCOIN: 100000, stackop_1:'OR' }
+tokenapiModule.checkTokenAccess(username,data).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
+```
+
+
 Check if a user holds the appropriate tokens for TCA. 
 
 * **Endpoint:** **/api/v1/tca/check/{username}**
@@ -78,6 +94,21 @@ else{
     //access denied
 }
 
+```
+
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var address = '1CPM4nnf9sjD7aU46gQki8moNdxwwkfjbf'
+var data = {TOKENLY: 1, LTBCOIN: 100000, stackop_1:'OR' }
+tokenapiModule.checkAddressTokenAccess(address,data).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
 ```
 
 Check if a specific bitcoin address holds a certain combination of tokens for TCA, no account necessary.

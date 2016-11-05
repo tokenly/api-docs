@@ -3,6 +3,7 @@ title: Tokenpass API Reference
 
 language_tabs:
   - php
+  - javascript
 
 toc_footers:
   - <a target="_blank" href='https://tokenly.com'>Tokenly</a>

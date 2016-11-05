@@ -17,6 +17,20 @@ if ($balance_list) {
 
 ```
 
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var data = {oauth_token:'otsU0YpM5bWN4Cj4lTcpC1ZBtRLMGSnhqAiqzt12',scope:'tca'}
+tokenapiModule.getCombinedPublicBalances(data).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
+```
+
 * **Endpoint:** **/api/v1/tca/public/balances**
 * **Request Method:** GET
 * **Authentication:** `oauth_token`
@@ -38,6 +52,20 @@ if ($balance_list) {
     }
 }
 
+```
+
+```javascript
+var config = require('./config.json')
+var TOKENPASS = require("tokenpass-api")
+var tokenapiModule = new TOKENPASS(config.tokenpass.key,config.tokenpass.secret,config.tokenpass.api_url);
+var data = {oauth_token:'otsU0YpM5bWN4Cj4lTcpC1ZBtRLMGSnhqAiqzt12',scope:'tca,manage-address,private-address'}
+tokenapiModule.getCombinedProtectedBalances(data).then(function(result){
+	console.log(result);
+	res.end(JSON.stringify(result))
+},function(err){
+	console.error(err);
+	res.end(JSON.stringify(err))
+})
 ```
 
 * **Endpoint:** **/api/v1/tca/protected/balances**
