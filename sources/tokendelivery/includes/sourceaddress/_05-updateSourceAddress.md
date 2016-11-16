@@ -16,6 +16,21 @@ curl -X PATCH \
     https://deliver.tokenly.com/api/v1/source/$SOURCE_ADDRESS_UUID
 ```
 
+```php
+<?php
+
+$client = new Tokenly\DeliveryClient\Client('https://deliver.tokenly.com', $API_TOKEN, $API_SECRET_KEY);
+
+$uuid = "1ce9fa7a-5b86-4a88-8aa9-8a17105ad49a";
+$data = [
+    'label'         => 'Game River',
+    'join_callback' => 'http://my-app.com/updated-joined-hook',
+];
+
+$response = $client->updateSourceAddress($uuid, $data);
+
+```
+
 
 > The above command returns data structured like this:
 

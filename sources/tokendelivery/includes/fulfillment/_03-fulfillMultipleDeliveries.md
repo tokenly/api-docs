@@ -17,6 +17,20 @@ curl -X POST \
     https://deliver.tokenly.com/api/v1/fulfillment/multiple/${SOURCE_ADDRESS_UUID}
 ```
 
+```php
+<?php
+
+$client = new Tokenly\DeliveryClient\Client('https://deliver.tokenly.com', $API_TOKEN, $API_SECRET_KEY);
+
+$source_address_uuid = "8ccccccc-1234-5678-1234-cccccccc1111";
+$filters = [
+    'tokens' => [ 'MYCOIN', 'YOURCOIN' ]
+];
+$response = $client->fulfillMultipleDeliveries($source_address_uuid, $filters);
+
+```
+
+
 
 > The above command returns data structured like this:
 

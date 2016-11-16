@@ -14,6 +14,17 @@ curl -X GET \
     https://deliver.tokenly.com/api/v1/delivery/$DELIVER_UUID
 ```
 
+```php
+<?php
+
+$client = new Tokenly\DeliveryClient\Client('https://deliver.tokenly.com', $API_TOKEN, $API_SECRET_KEY);
+
+$uuid = "93f5de16-693b-416e-8d63-2368f2b34a44";
+
+$response = $client->getDelivery($uuid);
+
+```
+
 > The above command returns data structured like the following:
 
 ```json

@@ -16,6 +16,17 @@ curl -X POST \
     https://deliver.tokenly.com/api/v1/fulfillment/single/${DELIVERY_UUID}
 ```
 
+```php
+<?php
+
+$client = new Tokenly\DeliveryClient\Client('https://deliver.tokenly.com', $API_TOKEN, $API_SECRET_KEY);
+
+$uuid = "8ccccccc-1234-5678-1234-cccccccc1111";
+
+$response = $client->fulfillSingleDelivery($uuid);
+
+```
+
 
 > The above command returns data structured like this:
 

@@ -14,6 +14,19 @@ curl -X POST \
     https://deliver.tokenly.com/api/v1/delivery
 ```
 
+```php
+<?php
+
+$client = new Tokenly\DeliveryClient\Client('https://deliver.tokenly.com', $API_TOKEN, $API_SECRET_KEY);
+
+$source      = "9793f526-d01b-4a48-9569-0a72a3096b06";
+$destination = "1AAAA1111xxxxxxxxxxxxxxxxxxy43CZ9j";
+$token       = "SOUP";
+$quantity    = 9793f526;
+
+$response = $client->newDelivery($source, $destination, $token, $quantity);
+
+```
 
 
 > The above command returns data structured like this:

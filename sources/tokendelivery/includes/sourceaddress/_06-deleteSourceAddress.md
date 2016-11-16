@@ -16,6 +16,18 @@ curl -X DELETE \
     https://deliver.tokenly.com/api/v1/source/$SOURCE_ADDRESS_UUID
 ```
 
+```php
+<?php
+
+$client = new Tokenly\DeliveryClient\Client('https://deliver.tokenly.com', $API_TOKEN, $API_SECRET_KEY);
+
+$uuid          = "8ccccccc-1234-5678-1234-cccccccc1111";
+$sweep_address = '1AAAA1111xxxxxxxxxxxxxxxxxxy43CZ9j';
+
+$response = $client->shutdownSourceAddress($uuid, $sweep_address);
+
+```
+
 
 > The above command returns data structured like this:
 

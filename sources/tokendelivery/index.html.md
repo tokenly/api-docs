@@ -3,6 +3,7 @@ title: Token Delivery Service API Reference
 
 language_tabs:
   - shell
+  - php
 
 toc_footers:
   - <a target="_blank" href='http://tokenly.com'>Tokenly</a>

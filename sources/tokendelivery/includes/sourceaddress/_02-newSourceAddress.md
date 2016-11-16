@@ -14,6 +14,20 @@ curl -X POST \
     https://deliver.tokenly.com/api/v1/source
 ```
 
+```php
+<?php
+
+$client = new Tokenly\DeliveryClient\Client('https://deliver.tokenly.com', $API_TOKEN, $API_SECRET_KEY);
+
+$label         = "Game Fountain";
+$type          = "2:2";
+$webhook       = "http://myapp.com/transactionhook";
+$join_callback = "http://myapp.com/joinedhook";
+
+$response = $client->newSourceAddress($label, $type, $webhook, $join_callback);
+
+```
+
 
 
 > The above command returns data structured like this:

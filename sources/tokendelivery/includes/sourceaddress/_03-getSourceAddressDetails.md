@@ -14,6 +14,17 @@ curl -X GET \
     https://deliver.tokenly.com/api/v1/source/$SOURCE_ADDRESS_UUID
 ```
 
+```php
+<?php
+
+$client = new Tokenly\DeliveryClient\Client('https://deliver.tokenly.com', $API_TOKEN, $API_SECRET_KEY);
+
+$uuid = "b1817e08-6537-4685-8435-ca9987d927f8";
+
+$response = $client->getSourceAddress($uuid);
+
+```
+
 > The above command returns data structured like the following:
 
 ```json
@@ -34,8 +45,6 @@ curl -X GET \
     "pendingDeliveries": []
 }
 ```
-
-
 
 
 Returns the details for this address.  Includes current balances and pending delivery balances.

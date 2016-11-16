@@ -12,6 +12,15 @@ curl -X GET \
     https://deliver.tokenly.com/api/v1/source
 ```
 
+```php
+<?php
+
+$client = new Tokenly\DeliveryClient\Client('https://deliver.tokenly.com', $API_TOKEN, $API_SECRET_KEY);
+
+$response = $client->getSourceAddressList();
+
+```
+
 > The above command returns data structured like the following:
 
 ```json

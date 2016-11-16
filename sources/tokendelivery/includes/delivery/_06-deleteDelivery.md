@@ -15,6 +15,15 @@ curl -X DELETE \
     https://deliver.tokenly.com/api/v1/source/${DELIVERY_UUID}
 ```
 
+```php
+<?php
+
+$client = new Tokenly\DeliveryClient\Client('https://deliver.tokenly.com', $API_TOKEN, $API_SECRET_KEY);
+
+$uuid = "93f5de16-693b-416e-8d63-2368f2b34a44";
+$response = $client->cancelDelivery($uuid);
+
+```
 
 > The above command returns data structured like this:
 
@@ -29,13 +38,13 @@ Cancels an unfulfilled delivery and removes any related Tokenpass promise.
 
 ### HTTP Request
 
-`DELETE https://deliver.tokenly.com/api/v1/source/{addressId}`
+`DELETE https://deliver.tokenly.com/api/v1/source/{deliveryId}`
 
 
 ### URL Parameters
 
-Parameter       | Description
----------       | -----------
-addressId       | The UUID of the delivery
+Parameter  | Description
+---------  | -----------
+deliveryId | The UUID of the delivery
 
 
