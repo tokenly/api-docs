@@ -36,12 +36,14 @@ $response = $client->getSourceAddress($uuid);
     "label": "Game Fountain",
     "type": "2:2",
     "webhook": "http://my-app.com/transactionhook",
+    "address": "3AAAA1111xxxxxxxxxxxxxxxxxxy43CZ9j",
     "autoFulfill": false,
     "active": true,
     "createdAt": "2016-10-21T15:38:36+0000",
     "updatedAt": "2016-10-21T15:38:36+0000",
     "desiredUtxoPrimes": 12,
     "balances": [],
+    "availableBalances": [],
     "pendingDeliveries": []
 }
 ```

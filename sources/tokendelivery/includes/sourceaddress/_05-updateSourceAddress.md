@@ -40,14 +40,18 @@ $response = $client->updateSourceAddress($uuid, $data);
     "joinCode": "Fenq762M2AHEBYUbnZGUweKxRocmqszNNZwzAWnj3ETR9Up3ThUPJqQ5vBq3f7eA2RL7obxoC6L",
     "joinCallback": "http://my-app.com/updated-joined-hook",
     "webhook": "http://my-app.com/transactionhook",
-    "address": null,
+    "address": "3AAAA1111xxxxxxxxxxxxxxxxxxy43CZ9j",
     "complete": false,
     "label": "Game River",
     "type": "2:2",
     "autoFulfill": true,
     "active": true,
     "createdAt": "2016-10-21T14:57:37+0000",
-    "updatedAt": "2016-10-21T14:57:37+0000"
+    "updatedAt": "2016-10-21T14:57:37+0000",
+    "desiredUtxoPrimes": 12,
+    "balances": [],
+    "availableBalances": [],
+    "pendingDeliveries": []
 }
 ```
 

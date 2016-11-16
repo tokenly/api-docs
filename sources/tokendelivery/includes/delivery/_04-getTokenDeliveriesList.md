@@ -38,9 +38,9 @@ $response = $client->getDeliveryList();
             "refData": "{\"test\": true}",
             "pseudo": false,
             "holdPromise": false,
-            "promiseId": "369",
-            "state": "0",
+            "state": 1,
             "complete": false,
+            "deliveryTx": null,
             "updatedAt": "2016-10-21T20:57:28+0000",
             "createdAt": "2016-10-21T20:57:28+0000"
         },
@@ -54,9 +54,9 @@ $response = $client->getDeliveryList();
             "refData": "{\"test\": true}",
             "pseudo": false,
             "holdPromise": false,
-            "promiseId": "959",
-            "state": "0",
+            "state": 1,
             "complete": false,
+            "deliveryTx": null,
             "updatedAt": "2016-10-21T20:57:28+0000",
             "createdAt": "2016-10-21T20:57:28+0000"
         }

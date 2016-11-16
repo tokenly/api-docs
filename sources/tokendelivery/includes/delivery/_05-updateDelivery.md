@@ -43,9 +43,9 @@ $response = $client->updateDelivery($uuid, $data);
     "refData": "test ref data",
     "pseudo": false,
     "holdPromise": false,
-    "promiseId": 123,
-    "state": "0",
+    "state": 1,
     "complete": false,
+    "deliveryTx": null,
     "updatedAt": "2016-10-21T18:43:21+0000",
     "createdAt": "2016-10-21T18:43:21+0000"
 }
