@@ -15,7 +15,8 @@ includes:
   - 03_promises
   - 04_addresses
   - 05_balances
-  - 06_authentication
+  - 06_messenger
+  - 07_authentication
 
 search: true
 ---
