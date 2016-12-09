@@ -6,7 +6,7 @@ $songs = $music_api->getSongs('cc6f8915-a7b3-4da1-aa5f-7e505291a181');
 ```
 
 ```shell
-curl -X GET https://music-stage.tokenly.com/api/v1/music/catalog/songs/cc6f8915-a7b3-4da1-aa5f-7e505291a181
+curl -X GET https://music.tokenly.com/api/v1/music/catalog/songs/cc6f8915-a7b3-4da1-aa5f-7e505291a181
 ```
 
 > The above command returns data structured like this:
@@ -42,7 +42,7 @@ Returns a list of songs for a given album.
 
 ### HTTP Request
 
-`GET https://music-stage.tokenly.com/api/v1/music/catalog/songs/{albumid}`
+`GET https://music.tokenly.com/api/v1/music/catalog/songs/{albumid}`
 
 
 ### URL Parameters

@@ -1,43 +1,36 @@
-## Retrieve Playlists
+## Retrieve Profile
 
 
 ```php
 <?php
-$playlists = $music_api->getPlaylists();
+$profile = $music_api->getProfile();
 ```
 
 ```shell
 API_TOKEN="Txxxxxxxxxxxxxxx"
 API_SECRET_KEY="Kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 NONCE=`date +%s`
-SIGNATURE=$(echo -en "GET\nhttps://music.tokenly.com/api/v1/playlists\n{}\n${API_TOKEN}\n${NONCE}" \
+SIGNATURE=$(echo -en "GET\nhttps://music.tokenly.com/api/v1/profile\n{}\n${API_TOKEN}\n${NONCE}" \
     | openssl dgst -sha256 -hmac "${API_SECRET_KEY}" -binary | base64)
 curl -X GET \
     -H "Content-Type: application/json" \
     -H "X-TOKENLY-AUTH-API-TOKEN: ${API_TOKEN}" \
     -H "X-TOKENLY-AUTH-NONCE: ${NONCE}" \
     -H "X-TOKENLY-AUTH-SIGNATURE: ${SIGNATURE}" \
-    https://music.tokenly.com/api/v1/playlists
+    https://music.tokenly.com/api/v1/profile
 ```
 
 > The above command returns data structured like this:
 
 ```json
 {
-    "playlist_1": [
-        {
-            "id": "songid1"
-        },
-        {
-            "id": "songid2"
-        }
-    ]
+    "bio": "I luv music."
 }
 ```
 
-Retrieves playlist data for the user owning the API token.
+Retrieves profile data for the user owning the API token.
 
 ### HTTP Request
 
-`GET https://music.tokenly.com/api/v1/playlists`
+`GET https://music.tokenly.com/api/v1/profile`
 

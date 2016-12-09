@@ -13,7 +13,7 @@ EXISTING_PASSWORD='ASecretP4$$w0RD'
 
 curl -H "Content-Type: application/json" -X POST \
   -d '{"username":"'$EXISTING_USERNAME'","password":"'$EXISTING_PASSWORD'"}' \
-  https://music-stage.tokenly.com/api/v1/account/login 
+  https://music.tokenly.com/api/v1/account/login 
 
 ```
 
@@ -35,7 +35,7 @@ This muser must exist in Tokenly Music or TokenPass.  If the user with these cre
 
 ### HTTP Request
 
-`POST https://music-stage.tokenly.com/api/v1/account/login`
+`POST https://music.tokenly.com/api/v1/account/login`
 
 
 ### POST Parameters

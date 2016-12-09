@@ -15,7 +15,7 @@ NEW_EMAIL='leroyjenkins@test.com'
 
 curl -H "Content-Type: application/json" -X POST \
   -d '{"username":"'$NEW_USERNAME'","password":"'$NEW_PASSWORD'","email":"'$NEW_EMAIL'"}' \
-  https://music-stage.tokenly.com/api/v1/account/register 
+  https://music.tokenly.com/api/v1/account/register 
 
 ```
 
@@ -37,7 +37,7 @@ This username must not exist in Tokenly Music or TokenPass.  If the user already
 
 ### HTTP Request
 
-`POST https://music-stage.tokenly.com/api/v1/account/register`
+`POST https://music.tokenly.com/api/v1/account/register`
 
 
 ### POST Parameters

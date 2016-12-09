@@ -7,7 +7,7 @@ $albums = $music_api->getAlbums();
 ```
 
 ```shell
-curl -X GET https://music-stage.tokenly.com/api/v1/music/catalog/albums
+curl -X GET https://music.tokenly.com/api/v1/music/catalog/albums
 ```
 
 > The above command returns data structured like this:
@@ -27,5 +27,5 @@ Lists all available publicly available albums.
 
 ### HTTP Request
 
-`GET https://music-stage.tokenly.com/api/v1/music/catalog/albums`
+`GET https://music.tokenly.com/api/v1/music/catalog/albums`
 

@@ -10,13 +10,13 @@ $albums = $music_api->getMySongs();
 API_TOKEN="Txxxxxxxxxxxxxxx"
 API_SECRET_KEY="Kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 NONCE=`date +%s`
-SIGNATURE=$(echo -en "GET\nhttps://music-stage.tokenly.com/api/v1/music/mysongs\n{}\n${API_TOKEN}\n${NONCE}" \
+SIGNATURE=$(echo -en "GET\nhttps://music.tokenly.com/api/v1/music/mysongs\n{}\n${API_TOKEN}\n${NONCE}" \
     | openssl dgst -sha256 -hmac "${API_SECRET_KEY}" -binary | base64)
 curl -X GET \
     -H "X-TOKENLY-AUTH-API-TOKEN: ${API_TOKEN}" \
     -H "X-TOKENLY-AUTH-NONCE: ${NONCE}" \
     -H "X-TOKENLY-AUTH-SIGNATURE: ${SIGNATURE}" \
-    https://music-stage.tokenly.com/api/v1/music/mysongs
+    https://music.tokenly.com/api/v1/music/mysongs
 ```
 
 > The above command returns data structured like this:
@@ -54,5 +54,5 @@ Lists all songs available to the user owning the API token.  The data returned i
 
 ### HTTP Request
 
-`GET https://music-stage.tokenly.com/api/v1/music/mysongs`
+`GET https://music.tokenly.com/api/v1/music/mysongs`
 

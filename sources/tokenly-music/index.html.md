@@ -14,6 +14,7 @@ includes:
   - public/01-intro
   - public/02-getAllAlbums
   - public/03-getSongs
+  - public/04-findProfile
   - account/01-intro
   - account/02-register
   - account/03-login
@@ -22,6 +23,8 @@ includes:
   - protected/03-getSongDownloadInfo
   - protected/04-putPlaylists
   - protected/05-getPlaylists
+  - protected/06-putProfile
+  - protected/07-getProfile
   - errors
 
 search: true

@@ -10,7 +10,7 @@ $music_api->storePlaylists($playlists);
 API_TOKEN="Txxxxxxxxxxxxxxx"
 API_SECRET_KEY="Kxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 NONCE=`date +%s`
-SIGNATURE=$(echo -en "PUT\nhttps://music-stage.tokenly.com/api/v1/playlists\n{\"playlist_1\":[{\"id\":\"songid1\"},{\"id\":\"songid2\"}]}\n${API_TOKEN}\n${NONCE}" \
+SIGNATURE=$(echo -en "PUT\nhttps://music.tokenly.com/api/v1/playlists\n{\"playlist_1\":[{\"id\":\"songid1\"},{\"id\":\"songid2\"}]}\n${API_TOKEN}\n${NONCE}" \
     | openssl dgst -sha256 -hmac "${API_SECRET_KEY}" -binary | base64)
 curl -X PUT \
     -H "Content-Type: application/json" \
@@ -18,7 +18,7 @@ curl -X PUT \
     -H "X-TOKENLY-AUTH-NONCE: ${NONCE}" \
     -H "X-TOKENLY-AUTH-SIGNATURE: ${SIGNATURE}" \
     -d '{"playlist_1":[{"id":"songid1"},{"id":"songid2"}]}' \
-    https://music-stage.tokenly.com/api/v1/playlists
+    https://music.tokenly.com/api/v1/playlists
 ```
 
 > The above command returns data structured like this:
@@ -33,9 +33,9 @@ Stores playlist data for the user owning the API token.  The data returned is on
 
 ### HTTP Request
 
-`PUT https://music-stage.tokenly.com/api/v1/playlists`
+`PUT https://music.tokenly.com/api/v1/playlists`
 
 
 ### PUT Parameters
 
-The playlist data formatted as a JSON encoded string
+The playlist data formatted as a JSON encoded string.  The API will return an error if the data is larger than 4 Kb.
