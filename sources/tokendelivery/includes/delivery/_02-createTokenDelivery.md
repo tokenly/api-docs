@@ -63,11 +63,11 @@ Creates a new token delivery.  Also registers a new Tokenpass promise and provis
 Parameter     | Description
 ------------  | -----------
 source        | (string) uuid OR bitcoin address of source to retrieve and send token inventory from
-destination   | (string) bitcoin address
+destination   | (string) bitcoin address or a tokenpass username in the form of `user:username`
 token         | (string) token or pseudo token to delivery
 quantity      | (integer) quantity of token to deliver, in satoshis.
-delivery_date | (timestamp, Optional) set to null to fulfill only on manual request, or set a date for automatic delivery
+delivery_date | (timestamp, Optional) set to null to fulfill only on manual request, or set a date for automatic delivery.  This parameter is not allowed for deliveries to usernames.
 ref_data      | (string, Optional) optional extra reference data you can attach
-hold_promise  | (boolean, Optional) default false, true if you want to register a delivery without creating an immediate promise
+hold_promise  | (boolean, Optional) default false, true if you want to register a delivery without creating an immediate promise.  This parameter may not be true for deliveries to usernames.
 pseudo        | (boolean, Optional) default false, true if using an un-issued (not real) token, makes delivery stuck in promise form and unfulfillable until swapped for a real token delivery.
 

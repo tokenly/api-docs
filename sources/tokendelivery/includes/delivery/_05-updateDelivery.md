@@ -73,5 +73,5 @@ Parameter     | Description
 quantity      | (integer) in satoshis.  The changed amount must still be available in the source address
 delivery_date | (timestamp | null) change the scheduled delivery date
 ref_data      | (string) update optional extra reference data
-ready         | (boolean) mark this delivery as ready for fulfillment
+ready         | (boolean) mark this delivery as ready for fulfillment.  Deliveries to usernames cannot be marked ready.
 
