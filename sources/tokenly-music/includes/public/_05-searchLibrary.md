@@ -46,6 +46,7 @@ Parameter | Description
 --------- | -----------
 name      | Album name to find
 artist    | Artist name to find
+limit     | Limit the number of results returned per page (optional, defaults to 50, maximum is 50)
 pg        | current page offset (starting with 0)
 
 

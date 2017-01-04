@@ -16,6 +16,7 @@ includes:
   - public/03-getSongs
   - public/04-findProfile
   - public/05-searchLibrary
+  - public/06-getArtists
   - account/01-intro
   - account/02-register
   - account/03-login
