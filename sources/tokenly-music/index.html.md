@@ -17,6 +17,8 @@ includes:
   - public/04-findProfile
   - public/05-searchLibrary
   - public/06-getArtists
+  - public/07-getGenres
+  - public/08-getTags
   - account/01-intro
   - account/02-register
   - account/03-login
