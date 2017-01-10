@@ -46,6 +46,10 @@ Parameter | Description
 --------- | -----------
 name      | Album name to find
 artist    | Artist name to find
+genre     | Genre name to find
+tag       | Tag to find
+token     | Token to find (must be a valid token name like MYTOKEN or A1234567890)
+operator  | 'OR' or 'AND' search.  Defaults to OR.
 limit     | Limit the number of results returned per page (optional, defaults to 50, maximum is 50)
 pg        | current page offset (starting with 0)
 
