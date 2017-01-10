@@ -49,6 +49,7 @@ Returns a list of all artists
 
 Parameter | Description
 --------- | -----------
+id        | Fetch a specific artist profile by uuid
 limit     | Limit the number of results returned per page (optional, defaults to 50, maximum is 50)
 pg        | current page offset (starting with 0)
 
