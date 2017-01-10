@@ -17,10 +17,18 @@ curl -X GET https://music.tokenly.com/api/v1/artists
     "items": [
         {
             "artist": "Mr. Chips",
+            "pictureUrl": "https://music.tokenly.com/path/to/pic.jpg",
+            "website": "http://mrchipssite.com",
+            "genre": "AI Rock",
+            "tags": ["ai","rock","techno"],
             "songCount": 2
         },
         {
             "artist": "The Blue Whiles",
+            "pictureUrl": "",
+            "website": "",
+            "genre": "",
+            "tags": [],
             "songCount": 1
         }
     ],
