@@ -45,7 +45,8 @@ curl -X GET \
         "bitcoinAddress": "1GJchZwagFFxXMUnRyQFVDe8QSKb9mJKXS",
         "other": "",
         "downloadUrl": "https://s3.amazonaws.com/tokenly-music/u-xxxxx/a-xxxxx/s-xxxxx/xxxxx.mp3",
-        "downloadSize": 3519927
+        "downloadSize": 3519927,
+        "artistProfileId": "4d1bf328-8fb3-4fef-ac65-b4f71b52ce03"
     }
 ]
 ```
