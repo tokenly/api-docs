@@ -44,9 +44,9 @@ Returns a list of search results
 
 Parameter | Description
 --------- | -----------
-name      | Album name to find
-artist    | Artist name to find
-genre     | Genre name to find
+name      | Album name to find. This search uses a keyword search.
+artist    | Artist name to find. This search uses a keyword search.
+genre     | Genre to find
 tag       | Tag to find
 token     | Token to find (must be a valid token name like MYTOKEN or A1234567890)
 operator  | 'OR' or 'AND' search.  Defaults to OR.
