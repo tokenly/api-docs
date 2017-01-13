@@ -22,13 +22,15 @@ curl -X GET https://music.tokenly.com/api/v1/library?artist=Mr.%20Chips
             "name": "Song 1",
             "artist": "Mr. Chips",
             "description": "Description of song 1",
-            "downloadUrl": "https://ipfs.tokenly.com/ipfs/Qmxxxxxxxxxxx/file-for-song-1.mp3"
+            "downloadUrl": "https://ipfs.tokenly.com/ipfs/Qmxxxxxxxxxxx/file-for-song-1.mp3",
+            "tokens": ["MRCHIPSALBUM"]
         },
         {
-            "name": "Song 2",
-            "artist": "Mr. Chips",
-            "description": "Description of song 2",
-            "downloadUrl": "https://ipfs.tokenly.com/ipfs/Qmxxxxxxxxxxx/file-for-song-2.mp3"
+            "name": "Another Song",
+            "artist": "Other Artist",
+            "description": "Description of other song",
+            "downloadUrl": "https://ipfs.tokenly.com/ipfs/Qmxxxxxxxxxxx/file-for-other-song.mp3"
+            "tokens": []
         }
     ]
 }
