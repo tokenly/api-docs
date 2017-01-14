@@ -1,6 +1,6 @@
-# TCA Messenging
+# TCA Messaging
 
-The TCA Messenging API supports returns data used to determine privileges when sending messages to token owners.
+The TCA Messaging API returns data used to determine privileges when sending messages to token owners.
 
 
 ## Get Messaging Permission Status
