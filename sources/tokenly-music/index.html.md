@@ -29,6 +29,8 @@ includes:
   - protected/05-getPlaylists
   - protected/06-putProfile
   - protected/07-getProfile
+  - protected/08-getCreditsBalance
+  - protected/09-authorizeStream
   - errors
 
 search: true
