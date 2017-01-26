@@ -28,11 +28,15 @@ curl -X POST \
 {
     "authorized": true,
     "balanceFloat": 97,
-    "balanceSat": 9700000000
+    "balanceSat": 9700000000,
+    "authType": "credits",
+    "token": null
 }
 ```
 
 Retrieves profile data for the user owning the API token.
+
+The returned authType is "credits" or "token".  If the authType is token, then the token name used is included.
 
 ### HTTP Request
 
