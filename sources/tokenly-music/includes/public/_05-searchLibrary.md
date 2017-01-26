@@ -19,17 +19,21 @@ curl -X GET https://music.tokenly.com/api/v1/library?artist=Mr.%20Chips
     "count": 2,
     "items": [
         {
+            "id": "bbb51108-9e89-4863-8b90-000000000001",
             "name": "Song 1",
             "artist": "Mr. Chips",
             "description": "Description of song 1",
             "downloadUrl": "https://ipfs.tokenly.com/ipfs/Qmxxxxxxxxxxx/file-for-song-1.mp3",
+            "isTokenlyMusic": true,
             "tokens": ["MRCHIPSALBUM"]
         },
         {
+            "id": "740e4e3e-438e-45be-b98d-000000000002",
             "name": "Another Song",
             "artist": "Other Artist",
             "description": "Description of other song",
-            "downloadUrl": "https://ipfs.tokenly.com/ipfs/Qmxxxxxxxxxxx/file-for-other-song.mp3"
+            "downloadUrl": "https://ipfs.alexandria.io/ipfs/Qmxxxxxxxxxxx/file-for-other-song.mp3",
+            "isTokenlyMusic": false,
             "tokens": []
         }
     ]
