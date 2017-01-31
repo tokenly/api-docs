@@ -31,6 +31,7 @@ includes:
   - protected/07-getProfile
   - protected/08-getCreditsBalance
   - protected/09-authorizeStream
+  - protected/10-TCACheck
   - errors
 
 search: true
