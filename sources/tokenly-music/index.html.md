@@ -24,7 +24,6 @@ includes:
   - account/03-login
   - protected/01-intro
   - protected/02-getMySongs
-  - protected/03-getSongDownloadInfo
   - protected/04-putPlaylists
   - protected/05-getPlaylists
   - protected/06-putProfile
