@@ -51,6 +51,7 @@ $response = $client->updateSourceAddress($uuid, $data);
     "desiredUtxoPrimes": 12,
     "balances": [],
     "availableBalances": [],
+    "unconfirmedBalances": [],
     "pendingDeliveries": []
 }
 ```

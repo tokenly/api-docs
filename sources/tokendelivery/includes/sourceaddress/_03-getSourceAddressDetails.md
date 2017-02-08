@@ -44,12 +44,13 @@ $response = $client->getSourceAddress($uuid);
     "desiredUtxoPrimes": 12,
     "balances": [],
     "availableBalances": [],
+    "unconfirmedBalances": [],
     "pendingDeliveries": []
 }
 ```
 
 
-Returns the details for this address.  Includes current balances and pending delivery balances.
+Returns the details for this address.  Includes current balances and pending delivery balances.  `unconfirmedBalances` includes all balances, including pending transactions with 0 or 1 confirmations.  Pending transactions over 4 days old are not included in the unconfirmed balances.
 
 ### HTTP Request
 
