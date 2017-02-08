@@ -35,3 +35,11 @@ Retrieves the credits balance for the user owning the API token.
 
 `GET https://music.tokenly.com/api/v1/credits/balance`
 
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+refresh   | Skip the cache and reload the balance from Tokenpass. (optional)
+
+
