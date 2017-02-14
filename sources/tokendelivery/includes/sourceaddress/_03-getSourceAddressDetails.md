@@ -50,7 +50,7 @@ $response = $client->getSourceAddress($uuid);
 ```
 
 
-Returns the details for this address.  Includes current balances and pending delivery balances.  `unconfirmedBalances` includes all balances, including pending transactions with 0 or 1 confirmations.  Pending transactions over 4 days old are not included in the unconfirmed balances.
+Returns the details for this address.  Includes current balances and pending delivery balances.  `unconfirmedBalances` includes pending transactions with 0 or 1 confirmations.  Pending transactions over 4 days old are not included in the unconfirmed balances.
 
 ### HTTP Request
 
