@@ -6,7 +6,7 @@ language_tabs:
   - shell
 
 toc_footers:
-  - <a target="_blank" href='http://tokenly.com'>Tokenly</a>
+  - <a target="_blank" href='https://tokenly.com'>Tokenly</a>
 
 includes:
   - intro
@@ -33,6 +33,7 @@ includes:
   - protected/08-getCreditsBalance
   - protected/09-authorizeStream
   - protected/10-TCACheck
+  - protected/11-logout
   - errors
 
 search: true
