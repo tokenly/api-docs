@@ -20,6 +20,7 @@ includes:
   - public/07-getGenres
   - public/08-getTags
   - public/09-getArtistProfile
+  - public/10-getSongsByArtistProfile
   - account/01-intro
   - account/02-register
   - account/03-login
