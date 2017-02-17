@@ -1,4 +1,4 @@
-## Get Artists
+## Get Featured Artists
 
 ```php
 <?php
@@ -21,8 +21,7 @@ curl -X GET https://music.tokenly.com/api/v1/artists
             "pictureUrl": "https://music.tokenly.com/path/to/pic.jpg",
             "website": "http://mrchipssite.com",
             "genre": "AI Rock",
-            "tags": ["ai","rock","techno"],
-            "songCount": 2
+            "tags": ["ai","rock","techno"]
         },
         {
             "artist": "The Blue Whiles",
@@ -30,8 +29,7 @@ curl -X GET https://music.tokenly.com/api/v1/artists
             "pictureUrl": "",
             "website": "",
             "genre": "",
-            "tags": [],
-            "songCount": 1
+            "tags": []
         }
     ],
     "page": 0,
@@ -40,7 +38,7 @@ curl -X GET https://music.tokenly.com/api/v1/artists
 }
 ```
 
-Returns a list of all artists
+Returns a list of all featured artists
 
 ### HTTP Request
 
@@ -51,7 +49,6 @@ Returns a list of all artists
 
 Parameter | Description
 --------- | -----------
-id        | Fetch a specific artist profile by uuid
 limit     | Limit the number of results returned per page (optional, defaults to 50, maximum is 50)
 pg        | current page offset (starting with 0)
 
