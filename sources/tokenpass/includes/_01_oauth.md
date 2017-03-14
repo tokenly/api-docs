@@ -181,6 +181,15 @@ Make sure to look at the ```email_is_confirmed``` variable to check that the log
 
 If everything checks out, the user can be considered logged in and granted access to your application.
 
+##Diagrams
+
+Below are process flow diagrams for a new and returning user flow.
+
+| Typical New User OAuth Flow | Typical Returning User OAuth Flow |
+|-----------------------------|-----------------------------------|
+| <a href="/images/tokenpass-new-user-oauth-flow.png" target="_blank"><img style="height:160px;" src="/images/tokenpass-new-user-oauth-flow.png"></a> | <a href="/images/tokenpass-returning-user-oauth-flow.png" target="_blank"><img style="height:160px;" src="/images/tokenpass-returning-user-oauth-flow.png"></a> |
+
+
 ##Permission Scopes
 
 The following permission scopes are available for use:
