@@ -17,7 +17,8 @@ includes:
   - 05_balances
   - 06_messenger
   - 07_appcredits
-  - 08_authentication
+  - 08_perks
+  - 09_authentication
 
 search: true
 ---
