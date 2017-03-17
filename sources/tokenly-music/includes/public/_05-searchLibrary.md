@@ -26,7 +26,11 @@ curl -X GET https://music.tokenly.com/api/v1/library?artist=Mr.%20Chips
             "description": "Description of song 1",
             "isTokenlyMusic": true,
             "publicStreamable": true,
-            "tokens": ["MRCHIPSALBUM"]
+            "tokens": ["MRCHIPSALBUM"],
+            "albumName": "The Album",
+            "albumId": "5f3e69c3-7e6a-4758-9dc2-40a0295afa46",
+            "artworkImage": "https://music.tokenly.com/path/to/image.png",
+            "isSingle": false
         },
         {
             "id": "740e4e3e-438e-45be-b98d-000000000002",
@@ -36,7 +40,11 @@ curl -X GET https://music.tokenly.com/api/v1/library?artist=Mr.%20Chips
             "description": "Description of other song",
             "isTokenlyMusic": false,
             "publicStreamable": true,
-            "tokens": []
+            "tokens": [],
+            "albumName": "The Album",
+            "albumId": "5918b2f6-ee00-4d89-89d8-88ffe19331df",
+            "artworkImage": null,
+            "isSingle": true
         }
     ]
 }
