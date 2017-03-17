@@ -25,6 +25,7 @@ curl -X GET https://music.tokenly.com/api/v1/library?artist=Mr.%20Chips
             "artistProfileId": "32c999ec-2cd4-427f-b60c-000000000001",
             "description": "Description of song 1",
             "isTokenlyMusic": true,
+            "publicStreamable": true,
             "tokens": ["MRCHIPSALBUM"]
         },
         {
@@ -34,6 +35,7 @@ curl -X GET https://music.tokenly.com/api/v1/library?artist=Mr.%20Chips
             "artistProfileId": null,
             "description": "Description of other song",
             "isTokenlyMusic": false,
+            "publicStreamable": true,
             "tokens": []
         }
     ]

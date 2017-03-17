@@ -25,16 +25,18 @@ curl -X GET https://music.tokenly.com/api/v1/artist/32c999ec-2cd4-427f-b60c-0000
             "artistProfileId": "32c999ec-2cd4-427f-b60c-000000000001",
             "description": "Description of song 1",
             "isTokenlyMusic": true,
+            "publicStreamable": true,
             "tokens": ["MRCHIPSALBUM"]
         },
         {
             "id": "740e4e3e-438e-45be-b98d-000000000002",
-            "name": "Another Song",
+            "name": "Song Two Preview",
             "artist": "Mr. Chips",
             "artistProfileId": "32c999ec-2cd4-427f-b60c-000000000001",
             "description": "Description of other song",
             "isTokenlyMusic": true,
-            "tokens": ["MRCHIPSALBUM"]
+            "publicStreamable": false,
+            "tokens": ["MRCHIPSFANS"]
         }
     ]
 }
