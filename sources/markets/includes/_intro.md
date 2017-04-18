@@ -5,4 +5,4 @@ Payments can be accepted in Credit Cards (via Stripe) as well as Cryptocurrencie
 
 See the documentation below to learn how to use both the public and private merchant API methods.
 
-To start, head to https://tokenmarkets.com, sign up and obtain a pair of API keys from the [Markets Settings](https://tokenmarkets.com/account/edit) page.
+To start, head to [https://tokenmarkets.com](https://tokenmarkets.com), sign up and obtain a pair of API keys from the [Markets Settings](https://tokenmarkets.com/account/edit) page.

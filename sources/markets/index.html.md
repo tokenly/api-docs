@@ -12,11 +12,11 @@ includes:
   - intro
   - instantinvoice/01-intro
   - instantinvoice/02-newInvoice
-  - instantInvoice/03-getInvoice
-  - instantInvoice/04-cancelInvoice
-  - instantInvoice/05-payInvoice
-  - instantInvoice/06-notifications
-  - instantInvoice/07-invoiceObject
+  - instantinvoice/03-getInvoice
+  - instantinvoice/04-cancelInvoice
+  - instantinvoice/05-payInvoice
+  - instantinvoice/06-notifications
+  - instantinvoice/07-invoiceObject
 
 search: true
 ---
