@@ -21,27 +21,45 @@ curl -X GET https://music.tokenly.com/api/v1/artist/32c999ec-2cd4-427f-b60c-0000
         {
             "id": "bbb51108-9e89-4863-8b90-000000000001",
             "name": "Song 1",
+            "tags": "bitcoin, rock, techno",
+            "tagsArray": ["bitcoin", "rock", "techno"],
+            "genre": "Alternative",
+            "releaseDate": "2016-03-26T20:31:12+0000",
             "artist": "Mr. Chips",
             "artistProfileId": "32c999ec-2cd4-427f-b60c-000000000001",
             "description": "Description of song 1",
             "isTokenlyMusic": true,
-            "tokens": ["MRCHIPSALBUM"]
+            "publicStreamable": true,
+            "tokens": ["MRCHIPSALBUM"],
+            "albumName": "The Album",
+            "albumId": "5918b2f6-ee00-4d89-89d8-88ffe19331df",
+            "artworkImage": null,
+            "isSingle": true
         },
         {
             "id": "740e4e3e-438e-45be-b98d-000000000002",
-            "name": "Another Song",
+            "name": "Song Two Preview",
+            "tags": "bitcoin, rock, techno",
+            "tagsArray": ["bitcoin", "rock", "techno"],
+            "genre": "Alternative",
+            "releaseDate": null,
             "artist": "Mr. Chips",
             "artistProfileId": "32c999ec-2cd4-427f-b60c-000000000001",
             "description": "Description of other song",
             "isTokenlyMusic": true,
-            "tokens": ["MRCHIPSALBUM"]
+            "publicStreamable": false,
+            "tokens": ["MRCHIPSFANS"],
+            "albumName": "The Other Album",
+            "albumId": "14101af1-f692-4651-87a9-4a228aa4a031",
+            "artworkImage": null,
+            "isSingle": true
         }
     ]
 }
 
 ```
 
-Returns a list of songs for a given album.
+Returns a list of songs for a given artist profile.
 
 ### HTTP Request
 
@@ -52,5 +70,5 @@ Returns a list of songs for a given album.
 
 Parameter | Description
 --------- | -----------
-albumid   | The album identifier
+profileId | The artist profile identifier
 
