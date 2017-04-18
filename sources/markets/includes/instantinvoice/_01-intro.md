@@ -5,6 +5,6 @@ This is similar to instant checkout functionality on Stripe or Paypal.
 
 For pricing, refer to "standard item" invoice pricing on your Markets dashboard.
 
-For front end implementation, refer to our javascript SDK here: https://github.com/tokenly/markets-instant-invoice
+For front end implementation, refer to our javascript SDK here: [https://github.com/tokenly/markets-instant-invoice](https://github.com/tokenly/markets-instant-invoice)
 
 ![](http://tokenmarkets.com/newbrandingearly.jpg)
