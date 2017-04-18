@@ -33,12 +33,9 @@ $new_token_chat = $api->createChat($oauth_token, $create_vars);
 {
     "name": "My Chat",
     "active": true,
-    "tca_rules": [
-        {
-            "token": "COINONE",
-            "quantity": 100000000
-        }
-    ]
+    "tokens": {
+        "COINONE": 100000000
+    }
 }
 
 ```
@@ -94,16 +91,10 @@ $token_chat = $api->updateChat($oauth_token, $chat_uuid, $update_vars);
 {
     "name": "My Chat",
     "active": true,
-    "tca_rules": [
-        {
-            "token": "COINONE",
-            "quantity": 100000000
-        },
-        {
-            "token": "COINTWO",
-            "quantity": 500000000
-        }
-    ]
+    "tokens": {
+        "COINONE": 100000000,
+        "COINTWO": 500000000
+    }
 }
 
 ```
@@ -154,16 +145,10 @@ $token_chat = $api->getChat($oauth_token, $chat_uuid);
 {
     "name": "My Chat",
     "active": true,
-    "tca_rules": [
-        {
-            "token": "COINONE",
-            "quantity": 100000000
-        },
-        {
-            "token": "COINTWO",
-            "quantity": 500000000
-        }
-    ]
+    "tokens": {
+        "COINONE": 100000000,
+        "COINTWO": 500000000
+    }
 }
 
 ```
