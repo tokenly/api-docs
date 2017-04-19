@@ -22,7 +22,7 @@ $client = new Tokenly\DeliveryClient\Client('https://deliver.tokenly.com', $API_
 $source      = "9793f526-d01b-4a48-9569-0a72a3096b06";
 $destination = "1AAAA1111xxxxxxxxxxxxxxxxxxy43CZ9j";
 $token       = "SOUP";
-$quantity    = 9793f526;
+$quantity    = 500000000;
 
 $response = $client->newDelivery($source, $destination, $token, $quantity);
 

@@ -16,9 +16,10 @@ includes:
   - 04_addresses
   - 05_balances
   - 06_messenger
-  - 07_appcredits
-  - 08_perks
-  - 09_authentication
+  - 07_tokenchats
+  - 08_appcredits
+  - 09_perks
+  - 10_authentication
 
 search: true
 ---
