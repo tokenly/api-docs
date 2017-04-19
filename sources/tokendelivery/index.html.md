@@ -31,6 +31,9 @@ includes:
   - fulfillment/02-fulfillSingleDelivery
   - fulfillment/03-fulfillMultipleDeliveries
 
+  - issuance/01-intro
+  - issuance/02-createIssuance
+
   - errors
 
 search: true
