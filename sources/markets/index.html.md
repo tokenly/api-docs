@@ -2,9 +2,7 @@
 title: Token Markets API Reference
 
 language_tabs:
-  - html
   - php
-  - json
   - shell
 
 toc_footers:
