@@ -1,7 +1,5 @@
 ##Instant Invoice Object
 
-JSON data returned from Instant Invoice API methods.
-
 ```
 {
     "uuid": "a78604cc-ca89-4793-b1aa-4ca3d2901084",
@@ -31,6 +29,9 @@ JSON data returned from Instant Invoice API methods.
     "receivedFloat": 0
 }
 ```
+
+JSON data returned from Pay with Token Markets&trade; API methods.
+
 
 **Response variables**
 

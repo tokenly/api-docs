@@ -1,9 +1,9 @@
 ##New Invoice
 
-Creates a new Instant Invoice. 
+Creates a new Pay with Token Markets&trade; invoice. 
 
 **HTTP Method**  
-```POST https://tokenmarkets.com/api/v1/instant-invoice/new```
+```POST https://tokenmarkets.com/api/v1/pay-with/new```
 
 **Authentication:** valid ```api_key``` query parameter
 
@@ -27,11 +27,6 @@ Parameter            | Type     | Description
 
 **Returns:** ```(Instant Invoice Object)```
 
-When using the ```peg``` option, the ```amount``` field in the resulting response is replaced with a calculated real total.
-For example, ```{paymentType: bitcoin, currency: BTC, peg: USD, amount: 10}``` will recalculate the amount to $10 worth of BTC.
-The original requested value is stored in the ```pegValue``` field and the exchange rate in ```pegRate```.
-
-
 ```json
 {
    "meta": {
@@ -43,5 +38,9 @@ The original requested value is stored in the ```pegValue``` field and the excha
 
 ```
 
-When using the ```bitcoin``` payment type and **not** using the ```peg``` option, a USD:BTC quote is included in the response ```meta``` object.
+When using the ```peg``` option, the ```amount``` field in the resulting response is replaced with a calculated real total.
+For example, ```{paymentType: bitcoin, currency: BTC, peg: USD, amount: 10}``` will recalculate the amount to $10 worth of BTC.
+The original requested value is stored in the ```pegValue``` field and the exchange rate in ```pegRate```.
+
+When using the ```bitcoin``` payment type and **not** using the ```peg``` option, a USD:BTC quote is included in the response ```meta``` object.  
 Otherwise use the peg/pegValue/pegRate fields to figure out value.

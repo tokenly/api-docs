@@ -2,8 +2,10 @@
 title: Token Markets API Reference
 
 language_tabs:
-  - shell
+  - html
   - php
+  - json
+  - shell
 
 toc_footers:
   - <a target="_blank" href='http://tokenly.com'>Tokenly</a>

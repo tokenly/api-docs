@@ -1,10 +1,55 @@
-#Instant Invoices
+#Pay with Token Markets&trade;
 
-"Instant Invoices" or "Instant Checkout" is a feature that allows for generic bitcoin/token/credit payment collection on any website or app.
+Pay with Token Markets&trade; or "Instant Invoices" is a feature that allows for generic bitcoin/token/credit payment collection on any website or app.
 This is similar to instant checkout functionality on Stripe or Paypal.
 
 For pricing, refer to "standard item" invoice pricing on your Markets dashboard.
 
-For front end implementation, refer to our javascript SDK here: [https://github.com/tokenly/markets-instant-invoice](https://github.com/tokenly/markets-instant-invoice)
+For front end implementation, refer to our javascript SDK and PHP API documentation below.
 
-![](http://tokenmarkets.com/newbrandingearly.jpg)
+##Installation
+
+Add Pay With Token Markets&trade; to your HTML page.
+
+```html
+<!-- simple install -->
+<script src="https://pay.tokenmarkets.com/pay.min.js"
+        class="js-pay-with-token-markets"
+        data-key="<MARKETS_API_KEY>" 
+        data-company="<YOUR_COMPANY>"
+        data-product="<YOUR_PRODUCT>"
+        data-type="token"
+        data-currency="tokenly"
+        data-amount="10">
+</script>
+
+<!-- advanced install -->
+<button id="pay-now-button">Pay Now</button>
+
+<script type="text/javascript" src="https://pay.tokenmarkets.com/pay.min.js"></script>
+<script type="text/javascript">
+  var handler = PayWithTokenMarkets.configure({
+    key: "<MARKETS_API_KEY>",
+    company: "<YOUR_COMPANY>",
+    product: "<YOUR_PRODUCT>",
+    type: "token",
+    currency: "SOUP",
+    amount: "1",
+    email: "john@example.com",
+    meta: {
+      invoiceId: "1000051"
+    }
+    completeMessage: 'Thank you for buying our product!'
+  });
+
+  document.getElementById('pay-now-button').addEventListener('click', function(e) {
+    handler.open();
+    e.preventDefault();
+  });
+
+  // Close Modal on page navigation:
+  window.addEventListener('popstate', function() {
+    handler.close();
+  });
+</script>
+```

@@ -1,9 +1,10 @@
 ##Pay Invoice with Credit Card
 
-Pay a ```credit``` type invoice using Stripe. For retrieving the correct payment input, see the [Stripe Elements documentation](https://stripe.com/docs/elements).
+Pay a ```credit``` type Pay with Token Markets&trade; invoice using Stripe. 
+For retrieving the correct payment input, see the [Stripe Elements documentation](https://stripe.com/docs/elements).
 
 **HTTP Method**  
-```POST https://tokenmarkets.com/api/v1/instant-invoice/{uuid}/pay```
+```POST https://tokenmarkets.com/api/v1/pay-with/{uuid}/pay```
 
 **Authentication:** valid ```api_key``` query parameter
 

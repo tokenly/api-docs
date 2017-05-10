@@ -1,9 +1,9 @@
 ##Get Invoice
 
-Get details for an un-expired Instant Invoice, referenced by ```uuid```.
+Get details for an un-expired Pay with Token Markets&trade; invoice, referenced by ```uuid```.
 
 **HTTP Method**  
-```GET https://tokenmarkets.com/api/v1/instant-invoice/{uuid}```
+```GET https://tokenmarkets.com/api/v1/pay-with/{uuid}```
 
 **Authentication:** valid ```api_key``` query parameter
 
