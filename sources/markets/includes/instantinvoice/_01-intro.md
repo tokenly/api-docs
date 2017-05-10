@@ -1,16 +1,5 @@
 #Pay with Token Markets&trade;
 
-Pay with Token Markets&trade; or "Instant Invoices" is a feature that allows for generic bitcoin/token/credit payment collection on any website or app.
-This is similar to instant checkout functionality on Stripe or Paypal.
-
-For pricing, refer to "standard item" invoice pricing on your Markets dashboard.
-
-For front end implementation, refer to our javascript SDK and PHP API documentation below.
-
-##Installation
-
-Add Pay With Token Markets&trade; to your HTML page.
-
 ```html
 <!-- simple install -->
 <script src="https://pay.tokenmarkets.com/pay.min.js"
@@ -53,3 +42,14 @@ Add Pay With Token Markets&trade; to your HTML page.
   });
 </script>
 ```
+
+Pay with Token Markets&trade; or "Instant Invoices" is a feature that allows for generic bitcoin/token/credit payment collection on any website or app.
+This is similar to instant checkout functionality on Stripe or Paypal.
+
+**Note:** A default bitcoin forwarding address must be set up in order to accept bitcoin or token payments.  
+Stripe Connect required for credit cards. See your [Markets Settings](https://tokenmarkets.com/account/edit) for account configuration.
+
+For pricing, refer to "standard item" invoice pricing on your Markets dashboard.
+
+For front end implementation, refer to our javascript SDK and PHP API documentation below.
+
