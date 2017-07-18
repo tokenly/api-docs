@@ -20,7 +20,7 @@ curl -X GET https://music.tokenly.com/api/v1/artist/profile/7252c3bf-a672-4cec-8
     "genre": "Bitcoin Rock",
     "tags": "bitcoin, rock, techno",
     "tagsArray": ["bitcoin", "rock", "techno"],
-    "marketsCatalog": "joe/joes-shop"
+    "marketsCatalog": "joe/joes-shop",
     "marketsCatalogUrl": "https://tokenmarkets.com/catalog/joe/joes-shop"
 }
 
