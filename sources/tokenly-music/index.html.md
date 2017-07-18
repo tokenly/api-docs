@@ -21,6 +21,9 @@ includes:
   - public/08-getTags
   - public/09-getArtistProfile
   - public/10-getSongsByArtistProfile
+  - public/11-getAlbumById
+  - public/12-sendPasswordResetEmail
+  - public/13-resetPassword
   - account/01-intro
   - account/02-register
   - account/03-login
