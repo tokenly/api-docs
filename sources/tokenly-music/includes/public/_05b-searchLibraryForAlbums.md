@@ -24,7 +24,9 @@ curl -X GET https://music.tokenly.com/api/v1/library/albums?artist=Mr.%20Chips
             "description": "The description of Sample Album One",
             "songCount": 2,
             "artworkImage": "https://music.tokenly.com/path/to/image.png",
-            "artistProfileId": "d149f4ae-0b72-4478-9b8d-5e4207620fdd"
+            "artistProfileId": "d149f4ae-0b72-4478-9b8d-5e4207620fdd",
+            "duration": 300,
+            "formattedDuration": "05:00"
         },
         {
             "id": "2ad1118b-adaa-4f24-bc12-000000000002",
@@ -32,7 +34,9 @@ curl -X GET https://music.tokenly.com/api/v1/library/albums?artist=Mr.%20Chips
             "description": "The description of Sample Album Two",
             "songCount": 2,
             "artworkImage": null,
-            "artistProfileId": null
+            "artistProfileId": null,
+            "duration": 185,
+            "formattedDuration": "03:05"
         }
     ]
 }

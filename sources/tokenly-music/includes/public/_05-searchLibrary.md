@@ -34,7 +34,9 @@ curl -X GET https://music.tokenly.com/api/v1/library?artist=Mr.%20Chips
             "albumName": "The Album",
             "albumId": "5f3e69c3-7e6a-4758-9dc2-40a0295afa46",
             "artworkImage": "https://music.tokenly.com/path/to/image.png",
-            "isSingle": false
+            "isSingle": false,
+            "duration": 180,
+            "formattedDuration": "03:00"
         },
         {
             "id": "740e4e3e-438e-45be-b98d-000000000002",
@@ -52,7 +54,9 @@ curl -X GET https://music.tokenly.com/api/v1/library?artist=Mr.%20Chips
             "albumName": "The Album",
             "albumId": "5918b2f6-ee00-4d89-89d8-88ffe19331df",
             "artworkImage": null,
-            "isSingle": true
+            "isSingle": true,
+            "duration": 180,
+            "formattedDuration": "03:00"
         }
     ]
 }
