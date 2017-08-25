@@ -70,7 +70,7 @@ Returns a list of search results
 
 Parameter | Description
 --------- | -----------
-name      | Album name to find. This search uses a keyword search.
+name      | Song name to find. This search uses a keyword search.
 artist    | Artist name to find. This search uses a keyword search.
 genre     | Genre to find
 tag       | Tag to find

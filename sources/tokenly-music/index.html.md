@@ -16,6 +16,7 @@ includes:
   - public/03-getSongs
   - public/04-findProfile
   - public/05-searchLibrary
+  - public/05b-searchLibraryForAlbums
   - public/06-getArtists
   - public/07-getGenres
   - public/08-getTags
@@ -37,6 +38,8 @@ includes:
   - protected/09-authorizeStream
   - protected/10-TCACheck
   - protected/11-logout
+  - protected/12-getChatPrivileges
+  - protected/13-joinChat
   - errors
 
 search: true
