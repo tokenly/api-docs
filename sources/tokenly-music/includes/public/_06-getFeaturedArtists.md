@@ -1,4 +1,4 @@
-## Get Featured Artists
+## Get Artists
 
 ```php
 <?php
@@ -38,7 +38,7 @@ curl -X GET https://music.tokenly.com/api/v1/artists
 }
 ```
 
-Returns a list of all featured artists
+Returns a list of all artists, sorted by featured artist rank
 
 ### HTTP Request
 
@@ -49,6 +49,8 @@ Returns a list of all featured artists
 
 Parameter | Description
 --------- | -----------
+genre     | Search by artist genre.  This is an exact match search.
+hero      | Filter the results on the existence of a hero image for the artist.  Leave empty for all featured artists.
 limit     | Limit the number of results returned per page (optional, defaults to 50, maximum is 50)
 pg        | current page offset (starting with 0)
 

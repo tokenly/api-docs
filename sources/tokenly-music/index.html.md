@@ -17,7 +17,7 @@ includes:
   - public/04-findProfile
   - public/05-searchLibrary
   - public/05b-searchLibraryForAlbums
-  - public/06-getArtists
+  - public/06-getFeaturedArtists
   - public/07-getGenres
   - public/08-getTags
   - public/09-getArtistProfile
