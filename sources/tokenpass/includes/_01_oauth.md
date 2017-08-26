@@ -194,10 +194,10 @@ Below are process flow diagrams for a new and returning user flow.
 
 The following permission scopes are available for use:
 
-| Scope            | Description                                                                                         |
-|------------------|-----------------------------------------------------------------------------------------------------|
-| user             | Basic user info required for most applications                                                      |
+| Scope            | Description                                                                                                                        |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| user             | Basic user info required for most applications                                                                                     |
 | tca              | Able to make Token Controlled Access requests relating to this user.  Checks balances held in both public and non-public addresses |
-| private-address  | Able to view all bitcoin addresses associated with this users' account including non-public ones    |
-| private-balances | Able to view the combined token balances associated with this users' acount including those held in non-public addresses |
-| manage-address   | Permission to manage this users' verified bitcoin addresses via API                                          |
+| private-balances | Able to view the combined token balances associated with this users' acount including those held in non-public addresses           |
+| private-address  | Able to view all bitcoin addresses associated with this users' account including non-public ones                                   |
+| manage-address   | Permission to manage this users' verified bitcoin addresses via API                                                                |
