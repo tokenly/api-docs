@@ -72,15 +72,17 @@ Returns a list of search results
 
 ### Query Parameters
 
-Parameter | Description
---------- | -----------
-name      | Song name to find. This search uses a keyword search.
-artist    | Artist name to find. This search uses a keyword search.
-genre     | Genre to find
-tag       | Tag to find
-token     | Token to find (must be a valid token name like MYTOKEN or A1234567890)
-operator  | 'OR' or 'AND' search.  Defaults to OR.
-limit     | Limit the number of results returned per page (optional, defaults to 50, maximum is 50)
-pg        | current page offset (starting with 0)
+Parameter    | Description
+---------    | -----------
+name         | Song name to find. This search uses a keyword search.
+artist       | Artist name to find. This search uses a keyword search.
+genre        | Genre to find
+tag          | Tag to find
+token        | Token to find (must be a valid token name like MYTOKEN or A1234567890)
+operator     | 'OR' or 'AND' search.  Defaults to OR.
+sort         | Specify 'top' to sort by the most streamed tracks first 
+topTimeframe | when sorting by top, specify '1h', '1d', '7d' or '30d' to change the timeframe of the streaming count.  The default is 1 day.
+limit        | Limit the number of results returned per page (optional, defaults to 50, maximum is 50)
+pg           | current page offset (starting with 0)
 
 
