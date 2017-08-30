@@ -14,6 +14,7 @@ includes:
   - public/01-intro
   - public/02-getAllAlbums
   - public/03-getSongs
+  - public/03b-getSongsById
   - public/04-findProfile
   - public/05-searchLibrary
   - public/05b-searchLibraryForAlbums
