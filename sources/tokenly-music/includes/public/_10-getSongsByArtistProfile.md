@@ -34,6 +34,7 @@ curl -X GET https://music.tokenly.com/api/v1/artist/32c999ec-2cd4-427f-b60c-0000
             "albumName": "The Album",
             "albumId": "5918b2f6-ee00-4d89-89d8-88ffe19331df",
             "artworkImage": null,
+            "artworkImageThumb": null,
             "isSingle": true,
             "duration": 180,
             "formattedDuration": "03:00"
@@ -54,6 +55,7 @@ curl -X GET https://music.tokenly.com/api/v1/artist/32c999ec-2cd4-427f-b60c-0000
             "albumName": "The Other Album",
             "albumId": "14101af1-f692-4651-87a9-4a228aa4a031",
             "artworkImage": null,
+            "artworkImageThumb": null,
             "isSingle": true,
             "duration": 180,
             "formattedDuration": "03:00"
