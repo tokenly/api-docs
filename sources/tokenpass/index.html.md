@@ -19,7 +19,8 @@ includes:
   - 07_tokenchats
   - 08_appcredits
   - 09_perks
-  - 10_authentication
+  - 10_registration
+  - 11_authentication
 
 search: true
 ---
