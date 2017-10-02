@@ -16,7 +16,6 @@ includes:
   - 04_addresses
   - 05_balances
   - 06_messenger
-  - 07_tokenchats
   - 08_appcredits
   - 09_perks
   - 10_registration
