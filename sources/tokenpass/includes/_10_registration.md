@@ -22,7 +22,7 @@ else{
 
 ```
 
-* **Endpoint:** **/api/v1/account/register**
+* **Endpoint:** **/api/v1/register**
 * **Request Method:** POST
 * **Authentication:** A valid `client_id` only
 * **Returns:** 
